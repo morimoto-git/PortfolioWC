@@ -1,0 +1,21 @@
+<%= form_for(game) do |f| %>
+
+  <h5>ゲーム名</h5>
+  <%= f.text_field :title %>
+
+  <h5>カテゴリー</h5>
+  <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "選択してください" %>
+
+  <h5>説明</h5>
+  <%= f.text_area :content, size: "50x3", wrap: "hard" %>
+
+  <div class="js-game">
+    <%= f.fields_for :game_rules do |rule| %>
+      <%= render 'game_rule_fields', f: rule %>
+    <% end %>
+    <%= link_to_add_association "追加", f, :game_rules %>
+  </div>
+
+  <%= f.submit "投稿する", class: "btn btn-success" %>
+
+<% end %>

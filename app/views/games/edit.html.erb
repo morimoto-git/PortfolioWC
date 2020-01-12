@@ -1,23 +1,2 @@
 <%= link_to "ゲームに戻る", game_path(@game), class: "fas fa-angle-double-left text-info" %>
-<%= form_for(@game) do |f| %>
-
-  <h5>ゲーム名</h5>
-  <%= f.text_field :title %>
-
-  <h5>カテゴリー</h5>
-  <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "選択してください" %>
-
-  <h5>画像</h5>
-  <%= f.attachment_field :game_images_images, multiple: true %>
-	<% @game.game_images.each do |image| %>
-	<div class="col-3 border">
-	  <%= attachment_image_tag image, :image, :fit, 240, 180, fallback: "no_icon.png", size: "240x180" %>
-	</div>
-	<% end %>
-
-  <h5>ゲーム説明</h5>
-  <%= f.text_area :content, size: "87x5", wrap: "hard" %>
-
-  <%= f.submit "保存する", class: "btn btn-success" %>
-
-<% end %>
+<%= render 'form', game: @game %>

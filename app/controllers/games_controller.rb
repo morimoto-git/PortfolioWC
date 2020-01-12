@@ -10,7 +10,7 @@ class GamesController < ApplicationController
 
   def new
   	@game = Game.new
-  	@game.game_images.build
+  	@game.game_rules.build
   end
 
   def create
