@@ -12,7 +12,7 @@
 <%= @game.content %>
 
 <% @game.game_rules.each do |rule| %>
-<div class="col-3">
+<div class="col-3 border m-2">
   <%= attachment_image_tag rule, :image, :fit, 240, 180, fallback: "no_image.png", size: "240x180" %>
 </div>
   <%= rule.text %>
