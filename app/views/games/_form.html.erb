@@ -16,6 +16,11 @@
     <%= link_to_add_association "追加", f, :game_rules %>
   </div>
 
-  <%= f.submit "投稿する", class: "btn btn-success" %>
+  <% case controller.action_name %>
+  <% when "new" %>
+    <%= f.submit "投稿する", class: "btn btn-success" %>
+  <% else %>
+    <%= f.submit "保存する", class: "btn btn-success" %>
+  <% end %>
 
 <% end %>

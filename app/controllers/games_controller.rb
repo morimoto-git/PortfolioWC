@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   end
 
   def show
-  	@game = Game.find_by(id: params[:id])
+  	@game = Game.find(params[:id])
   end
 
   def new
@@ -24,7 +24,10 @@ class GamesController < ApplicationController
   end
 
   def edit
-  	@game = Game.find_by(id: params[:id])
+  	@game = Game.find(params[:id])
+  	if @game.user_id != current_user.id
+  	  redirect_to game_path(@game)
+  	end
   end
 
   def update

@@ -1,6 +1,7 @@
-<%= link_to "新規投稿", new_game_path, class: "btn btn-outline-info" %>
+<% if @game.user == current_user %>
+  <%= link_to "編集", edit_game_path(@game), class: "btn btn-outline-info" %>
+<% end %>
 
-<%= link_to "編集", edit_game_path(@game), class: "btn btn-outline-info" %>
 <h5>ゲーム名</h5>
 <%= @game.title %>
 
@@ -11,7 +12,7 @@
 <%= @game.content %>
 
 <% @game.game_rules.each do |rule| %>
-<div class="col-3 border">
+<div class="col-3">
   <%= attachment_image_tag rule, :image, :fit, 240, 180, fallback: "no_image.png", size: "240x180" %>
 </div>
   <%= rule.text %>
