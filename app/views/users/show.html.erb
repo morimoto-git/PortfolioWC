@@ -1,0 +1,17 @@
+<h3>マイページ</h3>
+<div class='row'>
+  <div class='col-xs-3'>
+	<table class='table'>
+	  <tr>
+	  	<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
+	  </tr>
+	  <tr>
+        <%= @user.name %>
+	  </tr>
+	</table>
+
+	<% if @user == current_user %>
+      <%= link_to '会員情報編集', edit_user_path(@user), class: "btn btn-outline-info" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<%= form_for(@game) do |f| %>
+
+  <h5>ゲーム名</h5>
+  <%= f.text_field :title %>
+
+  <h5>カテゴリー</h5>
+  <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "選択してください" %>
+
+  <h5>画像</h5>
+  <%= f.attachment_field :game_images_images, multiple: true %>
+
+  <h5>ゲーム説明</h5>
+  <%= f.text_area :content, size: "87x5", wrap: "hard" %>
+
+  <%= f.submit "投稿する", class: "btn btn-success" %>
+
+<% end %>

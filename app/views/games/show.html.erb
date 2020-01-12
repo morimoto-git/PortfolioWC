@@ -1,0 +1,18 @@
+<%= link_to "新規投稿", new_game_path, class: "btn btn-outline-info" %>
+
+<%= link_to "編集", edit_game_path(@game), class: "btn btn-outline-info" %>
+<h5>ゲーム名</h5>
+<%= @game.title %>
+
+<h5>カテゴリー</h5>
+<%= @game.category.name %>
+
+<h5>画像</h5>
+<% @game.game_images.each do |image| %>
+<div class="col-3 border">
+  <%= attachment_image_tag image, :image, :fit, 240, 180, fallback: "no_icon.png", size: "240x180" %>
+</div>
+<% end %>
+
+<h5>ゲーム説明</h5>
+<%= @game.content %>

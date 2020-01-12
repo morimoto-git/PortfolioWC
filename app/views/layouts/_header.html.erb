@@ -1,0 +1,26 @@
+<header>
+  <%= link_to root_path, class: "ml-5 pl-4" do %>
+  <%= image_tag "ur_game.png", :width => "165", :height => "55" %>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= link_to edit_user_path(current_user), class: "text-muted float float-right mr-5 mt-2" do %>
+    <%= attachment_image_tag current_user, :profile_image, :fill, 40, 40, class: "rounded-circle", fallback: "no_icon.png", size: "40x40" %>
+    <%= current_user.name %> さん
+    <% end %>
+  <% end %>
+
+  <ul class="nav nav-pills nav-fill">
+    <% if user_signed_in? %>
+      <li class="nav-item" style="background-color:#FCF5DC;"><%= link_to "ホーム", root_path, class: "mr-4 text-muted" %></li>
+      <li class="nav-item" style="background-color:#FDE1C9;"><%= link_to "サービス", home_about_path, class: "mr-4 text-muted" %></li>
+      <li class="nav-item" style="background-color:#FCF5DC;"><%= link_to "マイページ", user_path(current_user), class: "mr-4 text-muted" %></li>
+      <li class="nav-item" style="background-color:#FDE1C9;"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-muted" %></li>
+    <% else %>
+      <li class="nav-item" style="background-color:#FCF5DC;"><%= link_to "ホーム", root_path, class: "mx-4 text-muted" %></li>
+      <li class="nav-item" style="background-color:#FDE1C9;"><%= link_to "サービス", home_about_path, class: "mr-4 text-muted" %></li>
+      <li class="nav-item" style="background-color:#FCF5DC;"><%= link_to "ログイン", new_user_session_path, class: "mr-4 text-muted" %></li>
+      <li class="nav-item" style="background-color:#FDE1C9;"><%= link_to "サインアップ", new_user_registration_path, class: "text-muted" %></li>
+    <% end %>
+  </ul>
+</header>
