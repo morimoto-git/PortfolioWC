@@ -11,7 +11,7 @@
 
   <div class="js-game">
     <%= f.fields_for :game_rules do |rule| %>
-      <%= render 'game_rule_fields', f: rule %>
+      <%= render "game_rule_fields", f: rule %>
     <% end %>
     <%= link_to_add_association "追加", f, :game_rules %>
   </div>
