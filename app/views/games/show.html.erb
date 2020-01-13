@@ -1,5 +1,11 @@
+<%= link_to "ゲーム一覧に戻る", games_path, class: "fas fa-angle-double-left text-info" %>
+
 <% if @game.user == current_user %>
-  <%= link_to "編集", edit_game_path(@game), class: "btn btn-outline-info" %>
+<div class="row">
+  <div class="col-3 my-2">
+    <%= link_to "編集", edit_game_path(@game), class: "btn btn-outline-info form-control" %>
+  </div>
+</div>
 <% end %>
 
 <h5>ゲーム名</h5>
