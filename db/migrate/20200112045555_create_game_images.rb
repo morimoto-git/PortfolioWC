@@ -5,6 +5,7 @@ class CreateGameImages < ActiveRecord::Migration[5.2]
       t.string :image_id
 
       t.timestamps
+      drop_table :game_images
     end
   end
 end
