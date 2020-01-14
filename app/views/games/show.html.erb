@@ -8,9 +8,6 @@
 </div>
 <% end %>
 
-<%= render "comments/form", game: @game, comment: @comment %>
-<%= render "comments/index", comments: @comments %>
-
 <h5>
   ゲーム名
   <a id="favorite_<%= @game.id %>">
@@ -25,6 +22,15 @@
 <h5>カテゴリー</h5>
 <%= @game.category.name %>
 
+<h5>プレイ人数</h5>
+<%= @game.player %>
+
+<h5>プレイ時間</h5>
+<%= @game.playing_time %>
+
+<h5>推奨年齢</h5>
+<%= @game.level %>
+
 <h5>ゲーム説明</h5>
 <%= @game.content %>
 
@@ -34,3 +40,6 @@
 </div>
   <%= rule.text %>
 <% end %>
+
+<%= render "comments/form", game: @game, comment: @comment %>
+<%= render "comments/index", comments: @comments %>
