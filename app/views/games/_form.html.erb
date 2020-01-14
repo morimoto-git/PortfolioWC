@@ -9,11 +9,14 @@
   <h5>説明</h5>
   <%= f.text_area :content, size: "50x3", wrap: "hard" %>
 
+  <h5>ルール</h5>
   <div class="js-game">
     <%= f.fields_for :game_rules do |rule| %>
       <%= render "game_rule_fields", f: rule %>
     <% end %>
-    <%= link_to_add_association "追加", f, :game_rules %>
+    <%= link_to_add_association f, :game_rules do %>
+      <i class="fas fa-folder-plus">追加</i>
+    <% end %>
   </div>
 
   <% case controller.action_name %>

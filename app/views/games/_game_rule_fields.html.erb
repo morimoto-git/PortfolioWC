@@ -1,12 +1,11 @@
 <div class="nested-fields">
-  <div class="border">
-    <h6>ルール</h6>
+  <div class="mb-2">
     <%= f.attachment_field :image %>
 
     <%= f.text_area :text, size: "87x5", wrap: "hard" %>
-  </div>
 
-  <div class="mb-3">
-    <%= link_to_remove_association "削除", f %>
+    <%= link_to_remove_association f do %>
+      <div class="btn btn-danger">削除</div>
+    <% end %>
   </div>
 </div>

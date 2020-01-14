@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get 'home/about'
 
   resources :categories, only: [:index, :new, :edit, :create, :update]
-  resources :games
+  resources :games do
+  	resource :favorites, only: [:create, :destroy]
+  end
 end

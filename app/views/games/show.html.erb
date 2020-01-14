@@ -8,7 +8,10 @@
 </div>
 <% end %>
 
-<h5>ゲーム名</h5>
+<h5>
+  ゲーム名
+  <%= render "favorites/favorite", game: @game %>
+</h5>
 <%= @game.title %>
 
 <h5>カテゴリー</h5>
