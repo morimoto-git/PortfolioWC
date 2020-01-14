@@ -1,0 +1,6 @@
+<%= form_for [game, comment] do |f| %>
+  <div class="mb-2">
+    <%= f.text_area :content, size: "90x5" %>
+    <%= f.submit "コメントする", class: "btn btn-success" %>
+  </div>
+<% end %>

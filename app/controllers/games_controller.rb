@@ -6,6 +6,8 @@ class GamesController < ApplicationController
 
   def show
   	@game = Game.find(params[:id])
+    @comment = Comment.new
+    @comments = @game.comments.order(id: "DESC")
   end
 
   def new

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :new, :edit, :create, :update]
   resources :games do
+  	resource :comments, only: [:create, :destroy]
   	resource :favorites, only: [:create, :destroy]
   end
 end

@@ -8,9 +8,17 @@
 </div>
 <% end %>
 
+<%= render "comments/form", game: @game, comment: @comment %>
+<%= render "comments/index", comments: @comments %>
+
 <h5>
   ゲーム名
-  <%= render "favorites/favorite", game: @game %>
+  <a id="favorite_<%= @game.id %>">
+    <%= render "favorites/favorite", game: @game %>
+  </a>
+  <i class="far fa-comment-dots">
+  	<%= @game.comments.count %>
+  </i>
 </h5>
 <%= @game.title %>
 
