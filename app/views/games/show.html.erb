@@ -1,45 +1,51 @@
-<%= link_to "ゲーム一覧に戻る", games_path, class: "fas fa-angle-double-left text-info" %>
+<div id="wrapper">
+  <%= link_to "ゲーム一覧に戻る", games_path, class: "fas fa-angle-double-left text-info" %>
 
-<% if @game.user == current_user %>
-<div class="row">
-  <div class="col-3 my-2">
-    <%= link_to "編集", edit_game_path(@game), class: "btn btn-outline-info form-control" %>
+  <% if @game.user == current_user %>
+  <div class="row">
+    <div class="col-3 my-2">
+      <%= link_to "編集", edit_game_path(@game), class: "btn btn-outline-info form-control" %>
+    </div>
   </div>
+  <% end %>
+
+  <h4 class="float-right">
+    <a id="favorite_<%= @game.id %>">
+      <%= render "favorites/favorite", game: @game %>
+    </a>
+    <i class="far fa-comment-dots ml-4" id="open_nav">
+      <%= @game.comments.count %>
+    </i>
+  </h4>
+
+  <h5>ゲーム名</h5>
+  <%= @game.title %>
+
+  <h5>カテゴリー</h5>
+  <%= @game.category.name %>
+
+  <h5>プレイ人数</h5>
+  <%= @game.player %>
+
+  <h5>プレイ時間</h5>
+  <%= @game.playing_time %>
+
+  <h5>推奨年齢</h5>
+  <%= @game.level %>
+
+  <h5>ゲーム説明</h5>
+  <%= @game.content %>
+
+  <% @game.game_rules.each do |rule| %>
+  <div class="col-3 border m-2">
+    <%= attachment_image_tag rule, :image, :fit, 240, 180, fallback: "no_image.png", size: "240x180" %>
+  </div>
+    <%= rule.text %>
+  <% end %>
 </div>
-<% end %>
 
-<h5>
-  ゲーム名
-  <a id="favorite_<%= @game.id %>">
-    <%= render "favorites/favorite", game: @game %>
-  </a>
-  <i class="far fa-comment-dots">
-  	<%= @game.comments.count %>
-  </i>
-</h5>
-<%= @game.title %>
-
-<h5>カテゴリー</h5>
-<%= @game.category.name %>
-
-<h5>プレイ人数</h5>
-<%= @game.player %>
-
-<h5>プレイ時間</h5>
-<%= @game.playing_time %>
-
-<h5>推奨年齢</h5>
-<%= @game.level %>
-
-<h5>ゲーム説明</h5>
-<%= @game.content %>
-
-<% @game.game_rules.each do |rule| %>
-<div class="col-3 border m-2">
-  <%= attachment_image_tag rule, :image, :fit, 240, 180, fallback: "no_image.png", size: "240x180" %>
-</div>
-  <%= rule.text %>
-<% end %>
-
-<%= render "comments/form", game: @game, comment: @comment %>
-<%= render "comments/index", comments: @comments %>
+<nav id="nav">
+  <h5>コメント</h5>
+  <%= render "comments/form", game: @game, comment: @comment %>
+  <%= render "comments/index", comments: @comments %>
+</nav>
