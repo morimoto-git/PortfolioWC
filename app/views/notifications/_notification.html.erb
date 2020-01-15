@@ -8,7 +8,7 @@
 
 	<div class="text-muted m-2">
 
-	  <%= link_to user_path(visitor), class: "text-info mr-1" do %>
+	  <%= link_to user_path(visitor), class: "text-info" do %>
 	    <%= attachment_image_tag visitor, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
 	    <%= visitor.name %>
 	  <% end %>
@@ -25,12 +25,13 @@
 	    <% if notification.game.user_id == visited.id %>
 	      <%= link_to "あなたの投稿", notification.game, class: "text-info" %>
 	    <% else %>
-	      <%= link_to game_path(notification.game), class: "text-info mr-1" do %>
+	      <%= link_to game_path(notification.game), class: "text-info" do %>
 	        <%= attachment_image_tag notification.game.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
 	        <%= notification.game.user.name %>
 	        <%= "さんの投稿" %>
 	      <% end %>
 	    <% end %>
+	    <%= "に" %>
 	    <i class="far fa-comment-dots"></i>
 	    <%= "コメントしました" %>
 
