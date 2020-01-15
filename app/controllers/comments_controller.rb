@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   	@comment = current_user.comments.new(comment_params)
   	@comment.game_id = @game.id
   	@comment.save
+    @game.create_notification_comment!(current_user, @comment.id)
   	redirect_back fallback_location: root_path
   end
 

@@ -9,7 +9,8 @@
       <%= attachment_image_tag current_user, :profile_image, :fill, 40, 40, class: "rounded-circle", fallback: "no_icon.png", size: "40x40" %>
       <%= current_user.name %> さん
     <% end %>
-    <%= link_to "投稿する", new_game_path, class: "text-muted far fa-edit" %>
+    <%= link_to "投稿する", new_game_path, class: "far fa-edit mr-2 text-muted " %>
+    <%= link_to "通知", notifications_path, class: "text-muted" %>
     </div>
   <% end %>
 
