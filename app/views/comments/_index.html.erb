@@ -6,7 +6,7 @@
       <%= comment.user.name %>
     <% end %>
     <a class="float-right">
-      <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+      <%= comment.created_at.strftime("%Y/%m/%d %H:%M") %>
     </a>
   </div>
 
@@ -16,7 +16,7 @@
 
   <% if comment.user == current_user %>
     <div class="text-right">
-      <%= link_to "削除", game_comments_path(comment), class: 'btn-sm btn-danger', method: :delete %>
+      <%= link_to "削除", game_comments_path(comment), class: "btn-sm btn-danger", method: :delete %>
     </div>
   <% end %>
 </div>
