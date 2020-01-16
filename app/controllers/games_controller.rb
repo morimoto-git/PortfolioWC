@@ -55,6 +55,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:user_id, :category_id, :title, :content, :player, :playing_time, :level, game_rules_attributes: [:id, :image, :text, :_destroy])
+    params.require(:game).permit(:user_id, :category_id, :title, :main_image, :content, :player, :playing_time, :level, game_rules_attributes: [:id, :image, :text, :_destroy])
   end
 end

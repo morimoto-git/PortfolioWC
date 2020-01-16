@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  attachment :main_image
   has_many :game_rules, dependent: :destroy
   accepts_nested_attributes_for :game_rules, allow_destroy: true
 

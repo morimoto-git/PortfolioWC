@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_062212) do
+ActiveRecord::Schema.define(version: 2020_01_16_102644) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_062212) do
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "main_image_id"
   end
 
   create_table "notifications", force: :cascade do |t|
