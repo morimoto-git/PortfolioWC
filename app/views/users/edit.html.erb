@@ -19,7 +19,7 @@
 	    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "rounded-circle", id: "img_prev", fallback: "no_icon.png", size: "100x100" %>
 	  </div>
 	<%= form_for(@user) do |f| %>
-	  <%= f.attachment_field :profile_image, class: "mb-2", id: "profile_img" %>
+	  <%= f.attachment_field :profile_image, class: "mb-2", id: "up_img" %>
 	  <p><%= f.check_box :remove_profile_image %>画像を削除する</p>
 	  <div class="form-group">
 	    <%= f.label :name, :ユーザー名 %><br>

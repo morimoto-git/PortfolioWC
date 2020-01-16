@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function() {
      reader.readAsDataURL(input.files[0]);
    }
  }
- $("#profile_img").change(function(){
+ $("#up_img").change(function(){
    readURL(this);
  });
 });

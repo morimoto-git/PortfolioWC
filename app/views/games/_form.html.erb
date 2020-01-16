@@ -1,7 +1,9 @@
 <%= form_for(game) do |f| %>
 
   <h5>メイン画像</h5>
-  <%= f.attachment_field :main_image %>
+  <%= attachment_image_tag @game, :main_image, :fit, 240, 180, id: "img_prev" , fallback: "no_image.png", size: "280x210"%>
+  <p><%= f.check_box :remove_main_image %>画像を削除する</p>
+  <%= f.attachment_field :main_image, id: "up_img" %>
 
   <h5>ゲーム名</h5>
   <%= f.text_field :title %>
