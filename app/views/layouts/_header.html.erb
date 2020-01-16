@@ -36,9 +36,12 @@
         <%= link_to "サービス", home_about_path, class: "mr-4 text-muted" %>
       </li>
       <li class="nav-item" style="background-color:#FCF5DC;">
-        <%= link_to "マイページ", user_path(current_user), class: "mr-4 text-muted" %>
+        <%= link_to "ランキング", ranking_path, class: "mr-4 text-muted" %>
       </li>
       <li class="nav-item" style="background-color:#FDE1C9;">
+        <%= link_to "マイページ", user_path(current_user), class: "mr-4 text-muted" %>
+      </li>
+      <li class="nav-item" style="background-color:#FCF5DC;">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-muted" %>
       </li>
     <% else %>
@@ -49,9 +52,12 @@
         <%= link_to "サービス", home_about_path, class: "mr-4 text-muted" %>
       </li>
       <li class="nav-item" style="background-color:#FCF5DC;">
-        <%= link_to "ログイン", new_user_session_path, class: "mr-4 text-muted" %>
+        <%= link_to "ランキング", ranking_path, class: "mr-4 text-muted" %>
       </li>
       <li class="nav-item" style="background-color:#FDE1C9;">
+        <%= link_to "ログイン", new_user_session_path, class: "mr-4 text-muted" %>
+      </li>
+      <li class="nav-item" style="background-color:#FCF5DC;">
         <%= link_to "サインアップ", new_user_registration_path, class: "text-muted" %>
       </li>
     <% end %>

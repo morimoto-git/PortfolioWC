@@ -1,0 +1,7 @@
+<% @fav_rank.each do |fav| %>
+  <%= fav.title %>
+  <%= render "favorites/favorite", game: fav %>
+  <i class="far fa-comment-dots">
+    <%= fav.comments.count %>
+  </i>
+<% end %>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get 'home/about'
+  get 'ranking', to: 'games#ranking'
 
   resources :categories, only: [:index, :new, :edit, :create, :update]
   resources :games do

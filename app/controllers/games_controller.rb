@@ -1,13 +1,17 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @games = Game.all
+    @games = Game.all.order(created_at: "DESC")
   end
 
   def show
   	@game = Game.find(params[:id])
     @comment = Comment.new
-    @comments = @game.comments.order(id: "DESC")
+    @comments = @game.comments.order(created_at: "DESC")
+  end
+
+  def ranking
+    @fav_rank = Game.find(Favorite.group(:game_id).order('count(game_id) desc').limit(3).pluck(:game_id))
   end
 
   def new
