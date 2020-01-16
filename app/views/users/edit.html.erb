@@ -16,12 +16,13 @@
 
 	<div class="p-3 border border-radius rounded">
 	  <div class="text-center mb-3">
-	    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "rounded-circle", fallback: "no_icon.png", size: "100x100" %>
+	    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "rounded-circle", id: "img_prev", fallback: "no_icon.png", size: "100x100" %>
 	  </div>
 	<%= form_for(@user) do |f| %>
-	  <%= f.attachment_field :profile_image, class: "mb-2" %>
+	  <%= f.attachment_field :profile_image, class: "mb-2", id: "profile_img" %>
+	  <p><%= f.check_box :remove_profile_image %>画像を削除する</p>
 	  <div class="form-group">
-	    <%= f.label :name, :ユーザー名 %><br />
+	    <%= f.label :name, :ユーザー名 %><br>
 	    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
 	  </div>
 
