@@ -1,7 +1,79 @@
-<% @fav_rank.each do |fav| %>
-  <%= fav.title %>
-  <%= render "favorites/favorite", game: fav %>
-  <i class="far fa-comment-dots">
-    <%= fav.comments.count %>
-  </i>
-<% end %>
+<div class="row">
+  <div class="col-6 border-right">
+  	<h5 class="text-muted">いいね数</h5>
+	<table class='table table-hover table-inverse'>
+	  <thead>
+	    <tr>
+	      <th>投稿者</th>
+	      <th>ゲーム名</th>
+	      <th>いいね数</th>
+	      <th>コメント数</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% @fav_rank.each do |fav| %>
+	  	  <tr>
+		    <td>
+		  	  <%= link_to user_path(fav.user), class: "text-info" do %>
+		        <%= attachment_image_tag fav.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
+		        <%= fav.user.name %>
+		      <% end %>
+		    </td>
+	  	  	<td>
+	  	  	  <%= link_to game_path(fav), class: "text-info" do %>
+	  	  	    <%= fav.title %>
+	  	  	  <% end %>
+	  	  	</td>
+	  	  	<td>
+			  <%= render "favorites/favorite", game: fav %>
+			</td>
+			<td>
+			  <i class="far fa-comment-dots">
+			    <%= fav.comments.count %>
+			  </i>
+	  	  	</td>
+	  	  </tr>
+	  	<% end %>
+	  </tbody>
+	</table>
+  </div>
+
+  <div class="col-6">
+  	<h5 class="text-muted">コメント数</h5>
+	<table class='table table-hover table-inverse'>
+	  <thead>
+	    <tr>
+	      <th>投稿者</th>
+	      <th>ゲーム名</th>
+	      <th>コメント数</th>
+	      <th>いいね数</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% @cmt_rank.each do |cmt| %>
+	  	  <tr>
+		    <td>
+		  	  <%= link_to user_path(cmt.user), class: "text-info" do %>
+		        <%= attachment_image_tag cmt.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
+		        <%= cmt.user.name %>
+		      <% end %>
+		    </td>
+	  	  	<td>
+	  	  	  <%= link_to game_path(cmt), class: "text-info" do %>
+	  	  	    <%= cmt.title %>
+	  	  	  <% end %>
+	  	  	</td>
+	  	  	<td>
+			  <i class="far fa-comment-dots">
+			    <%= cmt.comments.count %>
+			  </i>
+			</td>
+			<td>
+			  <%= render "favorites/favorite", game: cmt %>
+	  	  	</td>
+	  	  </tr>
+	  	<% end %>
+	  </tbody>
+	</table>
+  </div>
+</div>

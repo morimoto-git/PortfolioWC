@@ -27,7 +27,7 @@
 	      <tr>
 	        <td>
 	          <%= link_to game_path(game), class: "text-info" do %>
-	      	  <%= game.title %>
+	      	    <%= game.title %>
 	      	  <% end %>
 	        </td>
 	        <td>
@@ -43,7 +43,7 @@
   </div>
 
   <% if @user == current_user %>
-  <div class="col-5 border-right border-left">
+  <div class="col-5 border-right">
   	<h5 class="text-muted">あなたのいいね</h5>
 	<table class='table table-hover table-inverse'>
 	  <thead>
@@ -59,13 +59,13 @@
 		  <tr>
 		    <td>
 		  	  <%= link_to user_path(fav.game.user), class: "text-info" do %>
-		      <%= attachment_image_tag fav.game.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
-		      <%= fav.game.user.name %>
+		        <%= attachment_image_tag fav.game.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
+		        <%= fav.game.user.name %>
 		      <% end %>
 		    </td>
 		    <td>
 		  	  <%= link_to game_path(fav.game), class: "text-info" do %>
-		      <%= fav.game.title %>
+		        <%= fav.game.title %>
 		      <% end %>
 		    </td>
 		    <td class="text-right">
