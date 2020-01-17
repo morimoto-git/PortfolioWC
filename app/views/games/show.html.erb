@@ -17,9 +17,8 @@
     <a id="favorite_<%= @game.id %>">
       <%= render "favorites/favorite", game: @game %>
     </a>
-    <i class="far fa-comment-dots ml-1" id="open_nav">
-      <%= @game.comments.count %>
-    </i>
+    <i class="far fa-comment-dots ml-1" id="open_nav"></i>
+    <%= @game.comments.count %>
   </h5>
 
   <div>
