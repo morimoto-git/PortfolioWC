@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
-    @games = Game.all.order(created_at: "DESC")
+    @games = Game.search(params[:search]).order(created_at: "DESC")
   end
 
   def show
