@@ -28,9 +28,8 @@
 			  <%= render "favorites/favorite", game: fav %>
 			</td>
 			<td>
-			  <i class="far fa-comment-dots">
-			    <%= fav.comments.count %>
-			  </i>
+			  <i class="far fa-comment-dots"></i>
+			  <%= fav.comments.count %>
 	  	  	</td>
 	  	  </tr>
 	  	<% end %>
@@ -64,9 +63,8 @@
 	  	  	  <% end %>
 	  	  	</td>
 	  	  	<td>
-			  <i class="far fa-comment-dots">
-			    <%= cmt.comments.count %>
-			  </i>
+			  <i class="far fa-comment-dots"></i>
+			  <%= cmt.comments.count %>
 			</td>
 			<td>
 			  <%= render "favorites/favorite", game: cmt %>

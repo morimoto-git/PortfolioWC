@@ -25,6 +25,7 @@
         <% end %>
       <% end %>
     <% end %>
+
     <div class="float float-right mt-1">
       <%= form_tag(games_path, method: :get) do %>
         <%= text_field_tag :search %>
@@ -32,7 +33,6 @@
     </div>
     <% end %>
   </div>
-
 
   <ul class="nav nav-pills nav-fill">
     <% if user_signed_in? %>

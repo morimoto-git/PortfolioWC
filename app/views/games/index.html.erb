@@ -1,4 +1,9 @@
-<h1>games</h1>
 <% @games.each do |game| %>
+  <%= link_to game_path(game) do %>
+  <%= attachment_image_tag game, :main_image, :fit, 200, 150, fallback: "no_image.png", size: "200x150" %>
   <%= game.title %>
+  <% end %>
+  <%= render "favorites/favorite", game: game %>
+  <i class="far fa-comment-dots"></i>
+  <%= game.comments.count %>
 <% end %>
