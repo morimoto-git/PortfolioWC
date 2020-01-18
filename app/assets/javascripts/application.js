@@ -51,9 +51,8 @@ $(document).on('turbolinks:load', function() {
             data: [player, playing_time, level],
             backgroundColor: ['rgba(255, 159, 64, 0.4)'],
             borderColor: ['rgba(255, 159, 64, 1)'],
-            borderWidth: 1.5,
-            pointBorderColor: "orange",
-            pointBackgroundColor: "#FDE1C9"
+            borderWidth: 1.3,
+            pointBorderColor: "orange"
           }
         ]
       },
@@ -63,12 +62,13 @@ $(document).on('turbolinks:load', function() {
         },
         scale: {
           pointLabels: {
-          	fontSize: 16
+          	fontSize: 18
           },
           ticks: {
-            display: false,
+            display: true,
             suggestedMin: 0,
             suggestedMax: 4,
+            fontSize: 14,
             stepSize: 1
           },
           angleLines: {
