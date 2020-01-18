@@ -18,6 +18,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require cocoon
+//= require Chart.min
 
 $(document).on('turbolinks:load', function() {
   function readURL(input) {
@@ -33,3 +34,54 @@ $(document).on('turbolinks:load', function() {
    readURL(this);
  });
 });
+
+(function() {
+  window.draw_graph = function() {
+    var ctx, myChart;
+    ctx = document.getElementById("myChart");
+    var player = document.getElementById("myChart").getAttribute('data-player');
+    var playing_time = document.getElementById("myChart").getAttribute('data-playing_time');
+    var level = document.getElementById("myChart").getAttribute('data-level');
+    return myChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ["プレイ人数", "プレイ時間", "推奨年齢"],
+        datasets: [
+          {
+            data: [player, playing_time, level],
+            backgroundColor: ['rgba(255, 159, 64, 0.4)'],
+            borderColor: ['rgba(255, 159, 64, 1)'],
+            borderWidth: 1.5,
+            pointBorderColor: "orange",
+            pointBackgroundColor: "#FDE1C9"
+          }
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scale: {
+          pointLabels: {
+          	fontSize: 16
+          },
+          ticks: {
+            display: false,
+            suggestedMin: 0,
+            suggestedMax: 4,
+            stepSize: 1
+          },
+          angleLines: {
+            display: true,
+            color: "#CCCCCC"
+          },
+          gridLines: {
+            display: true,
+            color: "#CCCCCC"
+          }
+        }
+      }
+    });
+  };
+
+}).call(this);

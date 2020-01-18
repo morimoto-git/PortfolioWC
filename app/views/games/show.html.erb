@@ -25,6 +25,11 @@
   <%= attachment_image_tag @game, :main_image, :fit, 240, 180, fallback: "no_image.png", size: "280x210" %>
   </div>
 
+  <div style="width:400px; height:320px;">
+    <canvas id="myChart" width="100" height="100" data-player="<%= @game.player_before_type_cast %>" data-playing_time="<%= @game.playing_time_before_type_cast %>" data-level="<%= @game.level_before_type_cast %>"></canvas>
+    <script>draw_graph();</script>
+  </div>
+
   <h5>ゲーム名</h5>
   <%= @game.title %>
 
