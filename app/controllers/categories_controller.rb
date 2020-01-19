@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :user_admin
   def index
 	@categories = Category.all.order(id: "DESC")
 	@category = Category.new
@@ -31,5 +31,11 @@ class CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def user_admin
+    unless @user = current_user.admin?
+      redirect_to root_path
+    end
   end
 end

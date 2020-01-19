@@ -1,7 +1,19 @@
+<% if @game.errors.any? %>
+<div id="error_explanation">
+  <ul>
+    <% @game.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= form_for(game) do |f| %>
 
   <h5>メイン画像</h5>
-  <%= attachment_image_tag @game, :main_image, :fit, 240, 180, id: "img_prev" , fallback: "no_image.png", size: "240x180"%>
+  <%= attachment_image_tag game, :main_image, :fit, 240, 180, id: "img_prev" , fallback: "no_image.png", size: "240x180"%>
   <p><%= f.check_box :remove_main_image %>画像を削除する</p>
   <%= f.attachment_field :main_image, id: "up_img" %>
 

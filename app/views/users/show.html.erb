@@ -9,6 +9,9 @@
 	</table>
 	<% if @user == current_user %>
       <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-outline-info" %>
+      <% if current_user.admin? %>
+        <%= link_to "カテゴリー", categories_path, class: "btn btn-outline-info mt-2" %>
+      <% end %>
     <% end %>
   </div>
 
