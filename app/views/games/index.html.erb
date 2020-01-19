@@ -3,7 +3,9 @@
   <%= attachment_image_tag game, :main_image, :fit, 200, 150, fallback: "no_image.png", size: "200x150" %>
   <%= game.title %>
   <% end %>
-  <%= render "favorites/favorite", game: game %>
+  <span id="favorite_<%= game.id %>">
+    <%= render "favorites/favorite", game: game %>
+  </span>
   <i class="far fa-comment-dots"></i>
   <%= game.comments.count %>
 <% end %>

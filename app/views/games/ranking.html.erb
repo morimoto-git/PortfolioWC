@@ -4,15 +4,23 @@
 	<table class='table table-hover table-inverse'>
 	  <thead>
 	    <tr>
+	      <th></th>
 	      <th>投稿者</th>
 	      <th>ゲーム名</th>
-	      <th>いいね数</th>
-	      <th>コメント数</th>
+	      <th>
+	      	<i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+	      </th>
+	      <th>
+	      	<i class="far fa-comment-dots"></i>
+	      </th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  	<% @fav_rank.each do |fav| %>
 	  	  <tr>
+	  	  	<td>
+	  	  	  <%= attachment_image_tag fav, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
+	  	  	</td>
 		    <td>
 		  	  <%= link_to user_path(fav.user), class: "text-info" do %>
 		        <%= attachment_image_tag fav.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
@@ -25,10 +33,9 @@
 	  	  	  <% end %>
 	  	  	</td>
 	  	  	<td>
-			  <%= render "favorites/favorite", game: fav %>
+			  <%= fav.favorites.count %>
 			</td>
 			<td>
-			  <i class="far fa-comment-dots"></i>
 			  <%= fav.comments.count %>
 	  	  	</td>
 	  	  </tr>
@@ -42,15 +49,23 @@
 	<table class='table table-hover table-inverse'>
 	  <thead>
 	    <tr>
+	      <th></th>
 	      <th>投稿者</th>
 	      <th>ゲーム名</th>
-	      <th>コメント数</th>
-	      <th>いいね数</th>
+	      <th>
+	      	<i class="far fa-comment-dots"></i>
+	      </th>
+	      <th>
+	      	<i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+	      </th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  	<% @cmt_rank.each do |cmt| %>
 	  	  <tr>
+	  	  	<td>
+	  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
+	  	  	</td>
 		    <td>
 		  	  <%= link_to user_path(cmt.user), class: "text-info" do %>
 		        <%= attachment_image_tag cmt.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
@@ -63,11 +78,10 @@
 	  	  	  <% end %>
 	  	  	</td>
 	  	  	<td>
-			  <i class="far fa-comment-dots"></i>
 			  <%= cmt.comments.count %>
 			</td>
 			<td>
-			  <%= render "favorites/favorite", game: cmt %>
+			  <%= cmt.favorites.count %>
 	  	  	</td>
 	  	  </tr>
 	  	<% end %>
