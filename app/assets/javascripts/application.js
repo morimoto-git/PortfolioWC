@@ -65,10 +65,9 @@ $(document).on('turbolinks:load', function() {
           	fontSize: 18
           },
           ticks: {
-            display: true,
+            display: false,
             suggestedMin: 0,
-            suggestedMax: 4,
-            fontSize: 14,
+            suggestedMax: 5,
             stepSize: 1
           },
           angleLines: {

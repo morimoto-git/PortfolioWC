@@ -5,9 +5,9 @@ class Game < ApplicationRecord
   has_many :game_rules, dependent: :destroy
   accepts_nested_attributes_for :game_rules, allow_destroy: true
 
-  enum player: { "2人": 1, "3~4人": 2, "5~9人": 3, "10人以上": 4 }
-  enum playing_time: { "1~5分": 1, "6~10分": 2, "11~19分": 3, "20分以上":4 }
-  enum level: { "0~3歳": 1, "4~7歳": 2, "8~11歳": 3, "12歳以上": 4}
+  enum player: { "1~2人": 1, "3~4人": 2, "5~7人": 3, "8~9人": 4, "10人以上": 5 }
+  enum playing_time: { "1~2分": 1, "3~5分": 2, "6~10分": 3, "10~14分": 4, "15分以上": 5 }
+  enum level: { "2歳以上": 1, "6歳以上": 2, "9歳以上": 3, "12歳以上": 4, "15歳以上": 5 }
 
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy

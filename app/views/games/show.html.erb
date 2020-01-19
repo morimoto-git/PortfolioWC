@@ -6,9 +6,9 @@
       <%= attachment_image_tag @game.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
       <%= @game.user.name %>
     <% end %>
-    <a id="favorite_<%= @game.id %>">
+    <span id="favorite_<%= @game.id %>">
       <%= render "favorites/favorite", game: @game %>
-    </a>
+    </span>
     <i class="far fa-comment-dots ml-1" id="open_nav"></i>
     <%= @game.comments.count %>
     <% if @game.user == current_user %>
