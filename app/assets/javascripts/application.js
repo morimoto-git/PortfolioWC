@@ -62,7 +62,7 @@ $(document).on('turbolinks:load', function() {
         },
         scale: {
           pointLabels: {
-          	fontSize: 18
+            fontSize: 18
           },
           ticks: {
             display: false,

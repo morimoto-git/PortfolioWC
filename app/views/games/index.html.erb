@@ -1,13 +1,14 @@
-
+<div class="body">
+  <div class="container mt-3">
     <% @games.each do |game| %>
     <div class="game_index border mb-3">
       <div class="m-2">
 
         <nav class="border-bottom mb-1 pb-2">
           <span class="game_title mx-4">
-          <%= link_to game_path(game), class: "text-info" do %>
-            <%= game.title %>
-          <% end %>
+            <%= link_to game_path(game), class: "text-info" do %>
+              <%= game.title %>
+            <% end %>
           </span>
 
           <%= game.category.name %>
@@ -23,7 +24,7 @@
             </span>
             <i class="far fa-comment-dots"></i>
             <span class="mr-2">
-            <%= game.comments.count %>
+              <%= game.comments.count %>
             </span>
 
             <%= game.created_at.strftime("%Y/%m/%d %H:%M") %>
@@ -62,4 +63,5 @@
       </div>
     </div>
     <% end %>
-
+  </div>
+</div>

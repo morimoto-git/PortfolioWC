@@ -16,26 +16,6 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
-/*コメント表示*/
-#nav {
-  width: 300px;
-  height: 100%;
-}
-
 li {
   list-style: none;
-}
-
-/*ゲーム一覧*/
-.game_index {
-	width: 900px;
-	margin: 0 auto;
-}
-
-.game_title {
-	font-size: 28px;
-}
-
-.game_content {
-	font-size: 20px;
 }
