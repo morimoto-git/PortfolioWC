@@ -11,45 +11,66 @@
 <% end %>
 
 <%= form_for(game) do |f| %>
-
-  <h5>メイン画像</h5>
-  <%= attachment_image_tag game, :main_image, :fit, 240, 180, id: "img_prev" , fallback: "no_image.png", size: "240x180"%>
-  <p><%= f.check_box :remove_main_image %>画像を削除する</p>
-  <%= f.attachment_field :main_image, id: "up_img" %>
-
-  <h5>ゲーム名</h5>
-  <%= f.text_field :title %>
-
-  <h5>カテゴリー</h5>
-  <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "選択してください" %>
-
-  <h5>プレイ人数</h5>
-  <%= f.select :player, Game.players.keys.to_a, {} %>
-
-  <h5>プレイ時間</h5>
-  <%= f.select :playing_time, Game.playing_times.keys.to_a, {} %>
-
-  <h5>推奨年齢</h5>
-  <%= f.select :level, Game.levels.keys.to_a, {} %>
-
-  <h5>説明</h5>
-  <%= f.text_area :content, size: "70x4", wrap: "hard" %>
-
-  <h5>ルール</h5>
-  <div class="js-game">
-    <%= f.fields_for :game_rules do |rule| %>
-      <%= render "game_rule_fields", f: rule %>
-    <% end %>
-    <%= link_to_add_association f, :game_rules do %>
-      <i class="fas fa-folder-plus">追加</i>
-    <% end %>
+<div class="row mt-2 mb-4">
+  <div class="col-3">
+    <h4>メイン画像</h4>
+    <%= attachment_image_tag game, :main_image, :fit, 260, 195, id: "img_prev" , fallback: "no_image.png", size: "260x195"%>
+    <p class="mt-1"><%= f.check_box :remove_main_image %>画像を削除する</p>
+    <%= f.attachment_field :main_image, id: "up_img" %>
   </div>
 
-  <% case controller.action_name %>
-  <% when "new" %>
-    <%= f.submit "投稿する", class: "btn btn-success" %>
-  <% else %>
-    <%= f.submit "保存する", class: "btn btn-success" %>
+  <div class="col-6">
+    <h5>ゲーム名</h5>
+    <div class="mb-3">
+      <%= f.text_field :title, size: "50x1" %>
+    </div>
+
+    <h5>ゲーム説明</h5>
+    <div class="mb-3">
+      <%= f.text_area :content, size: "70x6", wrap: "hard" %>
+    </div>
+  </div>
+
+  <div class="col-3">
+    <h5>カテゴリー</h5>
+    <div class="mb-3">
+      <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "選択してください" %>
+    </div>
+
+    <h5>プレイ人数</h5>
+    <div class="mb-3">
+      <%= f.select :player, Game.players.keys.to_a, {} %>
+    </div>
+
+    <h5>プレイ時間</h5>
+    <div class="mb-3">
+      <%= f.select :playing_time, Game.playing_times.keys.to_a, {} %>
+    </div>
+
+    <h5>推奨年齢</h5>
+    <%= f.select :level, Game.levels.keys.to_a, {} %>
+  </div>
+</div>
+
+<h5>ルール</h5>
+<div class="js-game mb-3">
+  <%= f.fields_for :game_rules do |rule| %>
+    <%= render "game_rule_fields", f: rule %>
   <% end %>
+  <%= link_to_add_association f, :game_rules do %>
+    <h5 class="fas fa-folder-plus">ルール追加</h5>
+  <% end %>
+</div>
+
+<div class="row mb-5">
+  <div class="col-5 mx-auto">
+    <% case controller.action_name %>
+    <% when "new" %>
+      <%= f.submit "投稿する", class: "btn btn-success form-control" %>
+    <% else %>
+      <%= f.submit "保存する", class: "btn btn-success form-control" %>
+    <% end %>
+  </div>
+</div>
 
 <% end %>

@@ -9,10 +9,12 @@
 	        <%= @user.name %>
 		  </tr>
 		</table>
-		<% if @user == current_user %>
-	      <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-outline-info" %>
+		<% if @user == current_user || current_user.admin? %>
+	      <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-outline-info form-control" %>
+	      <%= link_to "退会する", user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger form-control my-2" %>
 	      <% if current_user.admin? %>
-	        <%= link_to "カテゴリー", categories_path, class: "btn btn-outline-info mt-2" %>
+	        <%= link_to "カテゴリー", categories_path, class: "btn btn-outline-success form-control" %>
+	        <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-success form-control my-2" %>
 	      <% end %>
 	    <% end %>
 	  </div>
@@ -55,7 +57,7 @@
 		    <tr>
 		      <th>投稿者</th>
 		      <th>ゲーム名</th>
-		      <th class="text-right">いいねした日時</th>
+		      <th class="text-right">日時</th>
 		    </tr>
 		  </thead>
 		  <tbody>
