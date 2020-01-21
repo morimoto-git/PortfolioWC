@@ -35,11 +35,17 @@
 <%= @game.category.name %>
 
 <h5>ゲーム説明</h5>
-<%= @game.content %>
+<%= simple_format(@game.content) %>
 
 <% @game.game_rules.each do |rule| %>
 <div class="col-3 m-2">
   <%= attachment_image_tag rule, :image, :fit, 240, 180, fallback: "no_image.png", size: "240x180" %>
 </div>
-  <%= rule.text %>
+  <%= simple_format(rule.text) %>
 <% end %>
+
+<nav id="nav">
+  <h5>コメント</h5>
+  <%= render "comments/form", game: @game, comment: @comment %>
+  <%= render "comments/index", comments: @comments %>
+</nav>
