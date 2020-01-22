@@ -6,6 +6,7 @@
 		<table class='table table-hover table-inverse'>
 		  <thead>
 		    <tr>
+		      <th><i class="fas fa-crown" style="color: #FFB405;"></i></th>
 		      <th></th>
 		      <th>投稿者</th>
 		      <th>ゲーム名</th>
@@ -18,8 +19,11 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	<% @fav_rank.each do |fav| %>
+		  	<% @fav_rank.each.with_index(1) do |fav, i| %>
 		  	  <tr>
+		  	  	<td>
+		  	  	  <h5><%= i %></h5>
+		  	  	</td>
 		  	  	<td>
 		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
 		  	  	</td>
@@ -51,6 +55,7 @@
 		<table class='table table-hover table-inverse'>
 		  <thead>
 		    <tr>
+		      <th><i class="fas fa-crown" style="color: #FFB405;"></i></th>
 		      <th></th>
 		      <th>投稿者</th>
 		      <th>ゲーム名</th>
@@ -63,8 +68,11 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	<% @cmt_rank.each do |cmt| %>
+		  	<% @cmt_rank.each.with_index(1) do |cmt, i| %>
 		  	  <tr>
+		  	  	<td>
+		  	  	  <h5><%= i %></h5>
+		  	  	</td>
 		  	  	<td>
 		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
 		  	  	</td>
