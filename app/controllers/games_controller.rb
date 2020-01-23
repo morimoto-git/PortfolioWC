@@ -11,8 +11,8 @@ class GamesController < ApplicationController
   end
 
   def ranking
-    @fav_rank = Game.find(Favorite.group(:game_id).order("count(game_id) desc").limit(10).pluck(:game_id))
-    @cmt_rank = Game.find(Comment.group(:game_id).order("count(game_id) desc").limit(10).pluck(:game_id))
+    @fav_rank = Game.find(Favorite.group(:game_id).order("count(game_id) desc").limit(5).pluck(:game_id))
+    @cmt_rank = Game.find(Comment.group(:game_id).order("count(game_id) desc").limit(5).pluck(:game_id))
   end
 
   def new

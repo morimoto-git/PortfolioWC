@@ -22,7 +22,7 @@
 		  	<% @fav_rank.each.with_index(1) do |fav, i| %>
 		  	  <tr>
 		  	  	<td>
-		  	  	  <h5><%= i %></h5>
+		  	  	  <h4><%= i %></h4>
 		  	  	</td>
 		  	  	<td>
 		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
@@ -39,10 +39,10 @@
 		  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-				  <%= fav.favorites.count %>
+				  <h5><%= fav.favorites.count %></h5>
 				</td>
 				<td>
-				  <%= fav.comments.count %>
+				  <h5><%= fav.comments.count %></h5>
 		  	  	</td>
 		  	  </tr>
 		  	<% end %>
@@ -71,7 +71,7 @@
 		  	<% @cmt_rank.each.with_index(1) do |cmt, i| %>
 		  	  <tr>
 		  	  	<td>
-		  	  	  <h5><%= i %></h5>
+		  	  	  <h4><%= i %></h4>
 		  	  	</td>
 		  	  	<td>
 		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
@@ -88,10 +88,10 @@
 		  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-				  <%= cmt.comments.count %>
+				  <h5><%= cmt.comments.count %></h5>
 				</td>
 				<td>
-				  <%= cmt.favorites.count %>
+				  <h5><%= cmt.favorites.count %></h5>
 		  	  	</td>
 		  	  </tr>
 		  	<% end %>

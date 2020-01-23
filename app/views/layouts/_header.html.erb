@@ -1,6 +1,6 @@
 <header>
   <%= link_to root_path, class: "ml-4 pl-4" do %>
-  <%= image_tag "ur_game.png", :width => "210", :height => "70" %>
+  <%= image_tag "ur_game.png", :width => "280", :height => "70" %>
   <% end %>
 
   <div class="float float-right mr-5 mt-3">
@@ -37,37 +37,47 @@
     </div>
   </div>
 
-  <ul class="nav nav-pills nav-fill">
+  <ul class="nav nav-pills nav-fill header-line">
     <% if user_signed_in? %>
-      <li class="nav-item" style="background-color:#FCF5DC;">
+      <li class="nav-item">
+        <i class="fas fa-dice-one"></i>
         <%= link_to "サービス", home_about_path, class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FDE1C9;">
+      <li class="nav-item">
+        <i class="fas fa-dice-two"></i>
         <%= link_to "ゲーム", games_path, class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FCF5DC;">
+      <li class="nav-item">
+        <i class="fas fa-dice-three"></i>
         <%= link_to "ランキング", ranking_path, class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FDE1C9;">
+      <li class="nav-item">
+        <i class="fas fa-dice-four"></i>
         <%= link_to "マイページ", user_path(current_user), class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FCF5DC;">
+      <li class="nav-item">
+        <i class="fas fa-dice-five"></i>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-muted" %>
       </li>
     <% else %>
-      <li class="nav-item" style="background-color:#FCF5DC;">
+      <li class="nav-item">
+        <i class="fas fa-dice-one"></i>
         <%= link_to "サービス", home_about_path, class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FDE1C9;">
+      <li class="nav-item">
+        <i class="fas fa-dice-two"></i>
         <%= link_to "ゲーム", games_path, class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FCF5DC;">
+      <li class="nav-item">
+        <i class="fas fa-dice-three"></i>
         <%= link_to "ランキング", ranking_path, class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FDE1C9;">
+      <li class="nav-item">
+        <i class="fas fa-dice-four"></i>
         <%= link_to "ログイン", new_user_session_path, class: "mr-4 text-muted" %>
       </li>
-      <li class="nav-item" style="background-color:#FCF5DC;">
+      <li class="nav-item">
+        <i class="fas fa-dice-five"></i>
         <%= link_to "サインアップ", new_user_registration_path, class: "text-muted" %>
       </li>
     <% end %>
