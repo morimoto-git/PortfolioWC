@@ -22,7 +22,7 @@
   <div class="col-6">
     <h5>ゲーム名</h5>
     <div class="mb-3">
-      <%= f.text_field :title, size: "50x1" %>
+      <%= f.text_field :title, size: "67x1" %>
     </div>
 
     <h5>ゲーム説明</h5>
@@ -52,14 +52,18 @@
   </div>
 </div>
 
-<h5>ルール</h5>
-<div class="js-game mb-3">
-  <%= f.fields_for :game_rules do |rule| %>
-    <%= render "game_rule_fields", f: rule %>
-  <% end %>
-  <%= link_to_add_association f, :game_rules do %>
-    <h5 class="fas fa-folder-plus">ルール追加</h5>
-  <% end %>
+<div class="row">
+  <div class="col-7 mx-auto">
+    <h5>ルール</h5>
+    <div class="js-game mb-3">
+      <%= f.fields_for :game_rules do |rule| %>
+        <%= render "game_rule_fields", f: rule %>
+      <% end %>
+      <%= link_to_add_association f, :game_rules do %>
+        <h5 class="fas fa-folder-plus">ルール追加</h5>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="row mb-5">

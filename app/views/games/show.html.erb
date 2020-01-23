@@ -1,55 +1,76 @@
-<div class="body">
-  <div class="container mt-3">
-    <%= link_to "ゲーム一覧に戻る", games_path, class: "fas fa-angle-double-left text-info" %>
-
-    <h5 class="my-2">
-      <%= link_to user_path(@game.user), class: "text-info" do %>
-        <%= attachment_image_tag @game.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
-        <%= @game.user.name %>
-      <% end %>
-      <span id="favorite_<%= @game.id %>">
-        <%= render "favorites/favorite", game: @game %>
-      </span>
-      <i class="far fa-comment-dots ml-1"></i>
+<div id="wrapper">
+  <div id="open_nav" class="float-right mr-3">
+    <h1 class="text-muted">
+      <i class="far fa-comment-dots"></i>
       <%= @game.comments.count %>
-      <% if @game.user == current_user %>
-      <%= link_to "編集する", edit_game_path(@game), class: "fas fa-angle-double-right text-info ml-5" %>
-      <% end %>
-    </h5>
+      <i class="far fa-caret-square-right ml-2 text-info"></i>
+    </h1>
+  </div>
+  <div class="body text-muted">
+    <div class="container mt-3">
+      <%= link_to "ゲーム一覧に戻る", games_path, class: "fas fa-angle-double-left text-info" %>
 
-    <ul class="float-right mt-5 mr-2">
-      <li><%= @game.player %></li>
-      <li><%= @game.playing_time %></li>
-      <li><%= @game.level %></li>
-    </ul>
+      <h4 class="mb-2">
+        <%= link_to user_path(@game.user), class: "text-info" do %>
+          <%= attachment_image_tag @game.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
+          <%= @game.user.name %>
+        <% end %>
+        <span id="favorite_<%= @game.id %>">
+          <%= render "favorites/favorite", game: @game %>
+        </span>
+        <% if @game.user == current_user %>
+          <%= link_to "編集する", edit_game_path(@game), class: "fas fa-angle-double-right text-info ml-5" %>
+        <% end %>
+      </h4>
 
-    <%= attachment_image_tag @game, :main_image, :fit, 400, 300, fallback: "no_image.png", size: "400x300" %>
+      <div class="float-right mt-5 mr-2">
+        <h4>プレイ人数</h4>
+        <h5 class="border-bottom border-warning mb-3">
+          <%= @game.player %>
+        </h5>
+        <h4>プレイ時間</h4>
+        <h5 class="border-bottom border-warning mb-3">
+          <%= @game.playing_time %>
+        </h5>
+        <h4>推奨年齢</h4>
+        <h5 class="border-bottom border-warning">
+          <%= @game.level %>
+        </h5>
+      </div>
 
-    <div class="float-right mr-5" style="width:400px; height:300px;">
-      <canvas id="myChart" width="100" height="100" data-player="<%= @game.player_before_type_cast %>" data-playing_time="<%= @game.playing_time_before_type_cast %>" data-level="<%= @game.level_before_type_cast %>"></canvas>
-      <script>draw_graph();</script>
+      <nav class="show-game mb-2 text-muted">
+        <span class="show-game_title"><%= @game.title %></span>
+        <span class="show-game_cate">カテゴリー：<%= @game.category.name %></span>
+      </nav>
+
+      <%= attachment_image_tag @game, :main_image, :fit, 440, 330, fallback: "no_image.png", size: "440x330" %>
+
+      <div class="float-right mr-5" style="width:400px; height:300px;">
+        <canvas id="myChart" width="100" height="100" data-player="<%= @game.player_before_type_cast %>" data-playing_time="<%= @game.playing_time_before_type_cast %>" data-level="<%= @game.level_before_type_cast %>"></canvas>
+        <script>draw_graph();</script>
+      </div>
+
+      <div class="show-game_content">
+        <h4>ゲーム説明</h4>
+        <h5 class="content_text"><%= simple_format(@game.content) %></h5>
+      </div>
+
+      <div class="row">
+        <% @game.game_rules.each do |rule| %>
+        <div class="col-4">
+          <%= attachment_image_tag rule, :image, :fit, 280, 210, fallback: "no_image.png", size: "280x210" %>
+        </div>
+        <div class="col-6">
+          <%= simple_format(rule.text) %>
+        </div>
+        <% end %>
+      </div>
     </div>
-
-    <h5>ゲーム名</h5>
-    <%= @game.title %>
-
-    <h5>カテゴリー</h5>
-    <%= @game.category.name %>
-
-    <h5>ゲーム説明</h5>
-    <%= simple_format(@game.content) %>
-
-    <% @game.game_rules.each do |rule| %>
-    <div class="col-3 m-2">
-      <%= attachment_image_tag rule, :image, :fit, 240, 180, fallback: "no_image.png", size: "240x180" %>
-    </div>
-      <%= simple_format(rule.text) %>
-    <% end %>
-
-    <nav id="nav">
-      <h5>コメント</h5>
-      <%= render "comments/form", game: @game, comment: @comment %>
-      <%= render "comments/index", comments: @comments %>
-    </nav>
   </div>
 </div>
+
+<nav id="nav" class="text-muted">
+  <h5><strong>コメント</strong></h5>
+  <%= render "comments/form", game: @game, comment: @comment %>
+  <%= render "comments/index", comments: @comments %>
+</nav>

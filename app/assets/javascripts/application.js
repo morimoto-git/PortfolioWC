@@ -84,3 +84,9 @@ $(document).on('turbolinks:load', function() {
   };
 
 }).call(this);
+
+$(document).ready(function(){
+  $('#open_nav').on('click', function(){
+    $('#wrapper, #nav').toggleClass('show');
+  });
+});

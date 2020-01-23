@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <%= form_for [game, comment] do |f| %>
     <div class="mb-2">
-      <%= f.text_area :content, size: "38x5" %>
+      <%= f.text_area :content, size: "36x5" %>
       <%= f.submit "コメントする", class: "btn-sm btn-success" %>
     </div>
   <% end %>

@@ -5,7 +5,7 @@ class Game < ApplicationRecord
   has_many :game_rules, dependent: :destroy
   accepts_nested_attributes_for :game_rules, allow_destroy: true
 
-  validates :title, presence: true
+  validates :title, length: { in: 1..40 }
   validates :category_id, presence: true
   validates :content, length: { in: 1..200 }
 
