@@ -12,7 +12,6 @@
 //
 //= require jquery3
 //= require rails-ujs
-//= require turbolinks
 //= require activestorage
 //= require_tree .
 //= require popper
@@ -20,7 +19,7 @@
 //= require cocoon
 //= require Chart.min
 
-$(document).on('turbolinks:load', function() {
+$(function() {
   function readURL(input) {
    if (input.files && input.files[0]) {
      var reader = new FileReader();
@@ -85,7 +84,7 @@ $(document).on('turbolinks:load', function() {
 
 }).call(this);
 
-$(document).ready(function(){
+$(function(){
   $('#open_nav').on('click', function(){
     $('#wrapper, #nav').toggleClass('show');
   });
