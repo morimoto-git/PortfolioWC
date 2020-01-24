@@ -6,6 +6,7 @@
 .game_index {
   width: 900px;
   margin: 0 auto;
+  background-color: #FFFFFF;
 }
 
 .game_title {
@@ -36,11 +37,20 @@
   margin: 20px auto;
 }
 
+.parameter {
+  margin-top: 140px;
+}
+
 .content_text {
   width: 650px;
   height: 180px;
   padding: 2px;
   border: solid #FFB405;
+  background-color: #FFFFFF;
+}
+
+.rule_text {
+  background-color: #FFFFFF;
 }
 
 /*open-comment*/

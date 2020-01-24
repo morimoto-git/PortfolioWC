@@ -12,9 +12,9 @@
 
 <%= form_for(game) do |f| %>
 <div class="row mt-2 mb-4">
-  <div class="col-3">
+  <div class="col-4">
     <h4>メイン画像</h4>
-    <%= attachment_image_tag game, :main_image, :fit, 260, 195, id: "img_prev" , fallback: "no_image.png", size: "260x195"%>
+    <%= attachment_image_tag game, :main_image, :fit, 280, 210, id: "img_prev" , fallback: "no_image.png", size: "280x210"%>
     <p class="mt-1"><%= f.check_box :remove_main_image %>画像を削除する</p>
     <%= f.attachment_field :main_image, id: "up_img" %>
   </div>
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <div class="col-3">
+  <div class="col-2">
     <h5>カテゴリー</h5>
     <div class="mb-3">
       <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "選択してください" %>
@@ -55,13 +55,15 @@
 <div class="row">
   <div class="col-7 mx-auto">
     <h5>ルール</h5>
-    <div class="js-game mb-3">
+    <div class="mb-3">
       <%= f.fields_for :game_rules do |rule| %>
         <%= render "game_rule_fields", f: rule %>
       <% end %>
-      <%= link_to_add_association f, :game_rules do %>
-        <h5 class="fas fa-folder-plus">ルール追加</h5>
-      <% end %>
+      <div>
+        <%= link_to_add_association f, :game_rules do %>
+          <h5 class="fas fa-folder-plus">ルール追加</h5>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
