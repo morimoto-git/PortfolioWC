@@ -80,6 +80,20 @@
   background: linear-gradient(180deg, #FFEFB0 0%, #E9B6AD 100%);
 }
 
+#nav::-webkit-scrollbar {
+  width: 10px;
+}
+
+#nav::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background: rgba(#FFF,0.3);
+}
+
+#nav::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #FF5D00;
+}
+
 .show {
   transform: translate3d(-320px, 0, 0);
 }
