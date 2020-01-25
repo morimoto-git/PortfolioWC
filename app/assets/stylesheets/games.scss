@@ -53,19 +53,35 @@
   background-color: #FFFFFF;
 }
 
-/*open-comment*/
+/*drower-comment*/
+
+#open_nav {
+  position: fixed;
+  right: 0px;
+}
+
+.fa-caret-square-right {
+  font-size: 60px;
+}
+
+.fa-times {
+  font-size: 35px;
+}
+
 #nav {
-  position: absolute;
-  right: -300px;
-  top: 105px;
-  width: 300px;
-  height: auto;
-  padding: 10px;
-  background-color: #BDFFF8;
+  position: fixed;
+  right: -320px;
+  top: 0px;
+  width: 320px;
+  height: 100%;
+  padding: 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #FFEFB0 0%, #E9B6AD 100%);
 }
 
 .show {
-  transform: translate3d(-300px, 0, 0);
+  transform: translate3d(-320px, 0, 0);
 }
 
 #wrapper, #nav {

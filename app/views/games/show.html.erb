@@ -1,11 +1,11 @@
 <div id="wrapper">
 
-  <div id="open_nav" class="float-right mr-3">
-    <h1 class="text-muted">
+  <div id="open_nav">
+    <h2 class="text-muted">
       <i class="far fa-comment-dots"></i>
       <%= @game.comments.count %>
-      <i class="far fa-caret-square-right ml-2 text-info"></i>
-    </h1>
+    </h2>
+    <i class="far fa-caret-square-right ml-2 text-info"></i>
   </div>
 
   <div class="body text-muted">
@@ -73,7 +73,12 @@
 </div>
 
 <nav id="nav" class="text-muted">
-  <h5><strong>コメント</strong></h5>
+  <h5>
+    <strong>コメント</strong>
+    <span id="close_nav" class="float-right">
+      <i class="fas fa-times"></i>
+    </span>
+  </h5>
   <%= render "comments/form", game: @game, comment: @comment %>
   <%= render "comments/index", comments: @comments %>
 </nav>

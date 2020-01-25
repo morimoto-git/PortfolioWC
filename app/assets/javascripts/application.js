@@ -88,4 +88,7 @@ $(function(){
   $('#open_nav').on('click', function(){
     $('#wrapper, #nav').toggleClass('show');
   });
+  $('#close_nav').on('click', function(){
+    $('#wrapper, #nav').removeClass('show');
+  });
 });
