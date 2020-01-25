@@ -16,9 +16,24 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+/*animation*/
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
 //body {
   //background-image: url("background.png");
 //}
+
+.body {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
 
 li {
   list-style: none;
