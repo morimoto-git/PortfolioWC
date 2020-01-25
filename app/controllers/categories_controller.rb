@@ -10,13 +10,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
-	@category = Category.new(category_params)
-	if @category.save
-	  redirect_to categories_path
-	else
-	  @categories = Category.all.order(id: "DESC")
-	  render :index
-	end
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to categories_path
+    else
+      @categories = Category.all.order(id: "DESC")
+      render :index
+    end
   end
 
   def update
