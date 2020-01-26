@@ -6,6 +6,8 @@
 .game_index {
   width: 900px;
   margin: 0 auto;
+  border:solid 1px #CCCCCC;
+  border-radius: 1em;
   background-color: #FFFFFF;
 }
 
@@ -57,7 +59,7 @@
 
 #open_nav {
   position: fixed;
-  right: 0px;
+  right: 5px;
 }
 
 .fa-caret-square-right {
@@ -86,12 +88,12 @@
 
 #nav::-webkit-scrollbar-track {
   border-radius: 8px;
-  background: rgba(#FFF,0.3);
+  background: rgba(#FFF,0.1);
 }
 
 #nav::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: #FF5D00;
+  background: #FF7D6A;
 }
 
 .show {

@@ -29,7 +29,7 @@
       <% end %>
     <% end %>
 
-    <div class="float float-right mt-1">
+    <div class="float float-right mt-2">
       <%= form_tag(games_path, method: :get) do %>
         <%= text_field_tag :search, "", placeholder: "ゲーム名" %>
         <%= submit_tag "検索", title: nil %>
