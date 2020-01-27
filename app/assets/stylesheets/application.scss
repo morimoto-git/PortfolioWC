@@ -29,6 +29,10 @@
 body {
   background-color: #FDF8F2;
   //background-image: url("background.png");
+  padding-bottom: 30px;
+  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
 }
 
 body::-webkit-scrollbar {
@@ -37,7 +41,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: rgba(#FFF,0.1);
+  background: rgba(#FFF, 0.1);
 }
 
 body::-webkit-scrollbar-thumb {
@@ -54,6 +58,7 @@ li {
   list-style: none;
 }
 
+/*header*/
 header {
   width: 100%;
   background-color: #FFFFFF;
@@ -77,9 +82,9 @@ header {
 
 .header-line {
   width: 100%;
-  height: 30px;
-  font-size: 20px;
-  line-height: 30px;
+  height: 25px;
+  font-size: 17px;
+  line-height: 25px;
 }
 
 .fa-dice-one {
@@ -111,4 +116,17 @@ header {
   width: 100%;
   height: 30px;
   background-image: url("bottom.png");
+}
+
+/*footer*/
+footer {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  font-family: 'Yu Gothic';
+  color: #F7FFFE;
+  line-height: 30px;
+  text-align: center;
+  background-color: rgba(#1E5A78, 0.8);
 }

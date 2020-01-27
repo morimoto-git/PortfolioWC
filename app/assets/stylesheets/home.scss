@@ -2,6 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*top*/
+.top_image {
+  width: 100%;
+  height: 720px;
+  background-image: url("ur_game_top.png");
+  //background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.top_games {
+  width: 500px;
+  height: 200px;
+  font-size: 40px;
+  font-family: 'Yu Gothic';
+  background-color: #E8653F;
+  line-height: 200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.top_account {
+  width: 500px;
+  height: 200px;
+  font-size: 40px;
+  font-family: 'Yu Gothic';
+  background-color: #E8653F;
+  line-height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*about*/
 .about-img {
   width: 100%;
   height: 900px;

@@ -1,6 +1,6 @@
 <header>
-  <%= link_to root_path, class: "ml-4 mb-2 pl-4" do %>
-    <%= image_tag "ur_game.png", :width => "280", :height => "70" %>
+  <%= link_to root_path, class: "ml-4 mb-1 pl-4" do %>
+    <%= image_tag "ur_game.png", :width => "220", :height => "55" %>
   <% end %>
 
   <div class="float float-right mr-5 mt-3">
@@ -29,7 +29,7 @@
       <% end %>
     <% end %>
 
-    <div class="float float-right mt-2">
+    <div class="float float-right mt-1">
       <%= form_tag(games_path, method: :get) do %>
         <%= text_field_tag :search, "", placeholder: "ゲーム名" %>
         <%= submit_tag "検索", title: nil %>
