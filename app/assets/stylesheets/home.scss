@@ -16,23 +16,34 @@
 
 .top_games {
   width: 500px;
-  height: 200px;
+  height: 150px;
   font-size: 40px;
   font-family: 'Yu Gothic';
   background-color: #E8653F;
-  line-height: 200px;
+  line-height: 150px;
   margin: 20px auto;
+  text-align: center;
+}
+
+.top_new_game {
+  width: 500px;
+  height: 150px;
+  font-size: 40px;
+  font-family: 'Yu Gothic';
+  background-color: #E8653F;
+  line-height: 150px;
+  margin: 0 auto 20px;
   text-align: center;
 }
 
 .top_account {
   width: 500px;
-  height: 200px;
+  height: 150px;
   font-size: 40px;
   font-family: 'Yu Gothic';
   background-color: #E8653F;
-  line-height: 200px;
-  margin: 0 auto;
+  line-height: 150px;
+  margin: 0 auto 20px;
   text-align: center;
 }
 

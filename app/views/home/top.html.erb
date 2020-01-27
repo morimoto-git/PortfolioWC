@@ -1,8 +1,17 @@
 <div class="top_image"></div>
 
-<div class="top_games">
-  <%= link_to "みんなのゲームをみる", games_path, class: "text-light" %>
-</div>
-<div class="top_account">
-  <%= link_to "アカウントを作成する", new_user_registration_path, class: "text-light" %>
-</div>
+<% if user_signed_in? %>
+  <div class="top_games">
+    <%= link_to "みんなのゲームをみる", games_path, class: "text-light" %>
+  </div>
+  <div class="top_new_game">
+    <%= link_to "ゲームを投稿する", new_game_path, class: "text-light" %>
+  </div>
+<% else %>
+  <div class="top_games">
+    <%= link_to "みんなのゲームをみる", games_path, class: "text-light" %>
+  </div>
+  <div class="top_account">
+    <%= link_to "アカウントを作成する", new_user_registration_path, class: "text-light" %>
+  </div>
+<% end %>
