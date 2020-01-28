@@ -1,5 +1,6 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
+
 <div class="mb-2">
   <div class="notification border">
 	<div class="float-right m-1">
@@ -7,7 +8,6 @@
 	</div>
 
 	<div class="text-muted m-2">
-
 	  <%= link_to user_path(visitor), class: "text-info" do %>
 	    <%= attachment_image_tag visitor, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
 	    <%= visitor.name %>

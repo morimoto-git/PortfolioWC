@@ -23,14 +23,12 @@ class Game < ApplicationRecord
 
   def create_notification_favorite!(current_user)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and game_id = ? and action = ?", current_user.id, user_id, id, "favorite"])
-    #いいねされていない時のみ通知
     if temp.blank?
       notification = current_user.active_notifications.new(
         game_id: id,
         visited_id: user_id,
         action: "favorite"
       )
-      #自分に対するいいねは通知済み設定
       if notification.visitor_id == notification.visited_id
         notification.checked = true
       end

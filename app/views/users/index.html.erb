@@ -20,7 +20,9 @@
 	          	<%= users.name %>
 	          </td>
 	          <td><%= users.games.count %></td>
-	          <td><%= link_to "ユーザーページ", user_path(users), class: "text-info" %></td>
+	          <td>
+	          	<%= link_to "ユーザーページ", user_path(users), class: "text-info" %>
+	          </td>
 	        </tr>
 	      <% end %>
 	      </tbody>
