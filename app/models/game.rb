@@ -1,9 +1,12 @@
 class Game < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  attachment :main_image
   has_many :game_rules, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :notifications, dependent: :destroy
   accepts_nested_attributes_for :game_rules, allow_destroy: true
+  attachment :main_image
 
   validates :title, length: { in: 1..40 }
   validates :category_id, presence: true
@@ -13,13 +16,9 @@ class Game < ApplicationRecord
   enum playing_time: { "1~2分": 1, "3~5分": 2, "6~10分": 3, "10~14分": 4, "15分以上": 5 }
   enum level: { "2歳以上": 1, "6歳以上": 2, "9歳以上": 3, "12歳以上": 4, "15歳以上": 5 }
 
-  has_many :comments, dependent: :destroy
-  has_many :favorites, dependent: :destroy
   def favorited_by?(user)
   	favorites.where(user_id: user.id).exists?
   end
-
-  has_many :notifications, dependent: :destroy
 
   def create_notification_favorite!(current_user)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and game_id = ? and action = ?", current_user.id, user_id, id, "favorite"])
@@ -64,5 +63,4 @@ class Game < ApplicationRecord
       all
     end
   end
-
 end
