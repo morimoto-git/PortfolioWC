@@ -3,12 +3,11 @@
 	<div class="row">
 
 	  <div class="col-2">
-		<table class="table">
-		  <tr>
-		  	<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
-	        <%= @user.name %>
-		  </tr>
-		</table>
+	  	<div class="text-center mb-4">
+	  	  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "rounded-circle", fallback: "no_icon.png", size: "100x100" %><br>
+          <h5 class="text-muted"><%= @user.name %></h5>
+        </div>
+
 		<% if @user == current_user || current_user.admin? %>
 	      <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-outline-info form-control" %>
 	      <%= link_to "退会する", user_path(@user), method: :delete, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger form-control my-2" %>

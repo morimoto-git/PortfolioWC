@@ -66,7 +66,7 @@ $(function() {
           ticks: {
             display: false,
             suggestedMin: 0,
-            suggestedMax: 5,
+            suggestedMax: 6,
             stepSize: 1
           },
           angleLines: {
