@@ -4,7 +4,7 @@
 **ur game**  
 オリジナルのアナログゲームを閲覧・投稿できるアプリケーション  
 ※urはyourの略語  
-URL:http://18.177.67.76/  
+URL:http://urgame.net/  
 
 ## Features
 ・投稿機能  
