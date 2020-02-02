@@ -33,13 +33,6 @@ ActiveRecord::Schema.define(version: 2020_01_19_093148) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "game_images", force: :cascade do |t|
-    t.integer "game_id"
-    t.string "image_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "game_rules", force: :cascade do |t|
     t.integer "game_id"
     t.string "image_id"
