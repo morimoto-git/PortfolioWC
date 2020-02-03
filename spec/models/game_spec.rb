@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, 'Gameモデルに関するテスト', type: :model do
+RSpec.describe Game, type: :model do
   before do
     @user = FactoryBot.create(:user)
   end
