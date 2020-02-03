@@ -26,6 +26,20 @@ RSpec.describe User, type: :model do
     expect(FactoryBot.build(:user,password:"password",password_confirmation: "passward")).to_not be_valid
   end
 
+  context "パスワードが６桁の時" do
+    it "正しい" do
+      user = FactoryBot.build(:user, password: "a" * 6,password_confirmation: "a" * 6)
+      expect(user).to be_valid
+    end
+  end
+
+  context "パスワードが５桁の時" do
+    it "正しくない" do
+      user = FactoryBot.build(:user, password: "a" *5, password_confirmation: "a" * 5)
+      expect(user).to be_invalid
+    end
+  end
+
   describe 'アソシエーション' do
   	context 'Gameモデルとの関係' do
   	  it "1:Nとなっている" do
