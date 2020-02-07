@@ -31,7 +31,7 @@ URL:http://urgame.net/
 3.自分がコメントした投稿に対する他ユーザーのコメント  
 
 ・非ログイン時  
-投稿一覧、投稿詳細、ランキングの閲覧、投稿検索のみ可能  
+投稿一覧・投稿詳細・ランキングの閲覧、投稿検索のみ可能  
 
 ## Dependencies/Technologies
 ruby 2.5.7  
@@ -42,12 +42,15 @@ mysql2
 
 ## Gem
 devise  
-pry-byebug  
 refile  
 refile-mini_magick  
 cocoon  
 dotenv-rails  
 chart-js-rails  
+pry-byebug  
+rspec-rails  
+factory_bot_rails  
+faker  
 
 ## Installation
 git clone https://github.com/morimotohirotomo/portfolio  
@@ -59,4 +62,4 @@ rails s
 puma/nginx
 
 ## Author
-Morimoto Hirotomo
+Hirotomo Morimoto
