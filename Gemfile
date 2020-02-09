@@ -73,6 +73,7 @@ gem "refile-mini_magick"
 gem 'cocoon'
 gem 'dotenv-rails'
 gem 'chart-js-rails'
+gem 'kaminari'
 
 group :production do
   gem 'mysql2'

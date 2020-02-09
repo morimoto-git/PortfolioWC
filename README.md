@@ -47,6 +47,7 @@ refile-mini_magick
 cocoon  
 dotenv-rails  
 chart-js-rails  
+kaminari  
 pry-byebug  
 rspec-rails  
 factory_bot_rails  
