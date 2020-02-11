@@ -18,5 +18,13 @@ RSpec.describe GamesController, type: :controller do
       expect(response.status).to eq 200
     end
   end
+  context "ランキングページが正しく表示される" do
+    before do
+      get :ranking
+    end
+    it 'リクエストは200 OKとなること' do
+      expect(response.status).to eq 200
+    end
+  end
 
 end
