@@ -18,6 +18,7 @@ RSpec.describe Game, type: :model do
     context 'ゲーム説明' do
       it 'ゲーム説明がなければ登録できない' do
         game.content = ''
+        expect(game).to_not be_valid
       end
       it '201文字以上なら登録できない' do
         game.content = 'a' * 201
