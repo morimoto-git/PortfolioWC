@@ -19,4 +19,12 @@ RSpec.describe Category, type: :model do
       end
     end
   end
+
+  describe 'アソシエーション' do
+    context 'Gameモデルとの関係' do
+      it '1:Nとなっている' do
+        expect(Category.reflect_on_association(:games).macro).to eq :has_many
+      end
+    end
+  end
 end
