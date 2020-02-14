@@ -39,7 +39,7 @@ RSpec.describe Game, type: :model do
       end
     end
   	context 'Categoryモデルとの関係' do
-  	  it "1:Nとなっている" do
+  	  it "N:1となっている" do
   	  	expect(Game.reflect_on_association(:category).macro).to eq :belongs_to
   	  end
   	end
