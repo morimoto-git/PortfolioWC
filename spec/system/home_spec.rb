@@ -19,7 +19,7 @@ describe 'home', type: :system do
     end
   end
 
-  it "アバウトページが正しく表示される" do
+  it 'アバウトページが正しく表示される' do
     visit about_path
     expect(page).to have_content 'ur game'
   end

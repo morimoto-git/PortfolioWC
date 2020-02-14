@@ -20,7 +20,7 @@ describe 'game', type: :system do
     expect(game).to be_valid
   end
 
-  context "ページが正しく表示される" do
+  context 'ページが正しく表示される' do
     it 'ゲーム一覧ページ' do
       visit games_path
       expect(page).to have_content 'プレイ時間'

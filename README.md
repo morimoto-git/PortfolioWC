@@ -51,7 +51,6 @@ kaminari
 pry-byebug  
 rspec-rails  
 factory_bot_rails  
-faker  
 
 ## Installation
 git clone https://github.com/morimotohirotomo/portfolio  

@@ -9,7 +9,7 @@ describe 'user', type: :system do
     click_button 'ログイン'
   end
 
-  context "管理者ユーザーがログインしているとき" do
+  context '管理者ユーザーがログインしているとき' do
 
     it 'ユーザー一覧ページが正しく表示される' do
       visit users_path
