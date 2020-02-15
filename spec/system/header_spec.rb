@@ -55,6 +55,15 @@ describe 'ヘッダーのテスト' do
       click_button 'ログイン'
     end
     context 'ヘッダーの表示を確認' do
+      it '会員情報編集リンクが表示される' do
+        expect(page).to have_content @user.name
+      end
+      it '新規投稿リンクが表示される' do
+        expect(page).to have_content '投稿する'
+      end
+      it '通知リンクが表示される' do
+        expect(page).to have_content '通知'
+      end
       it 'サービスリンクが表示される' do
         expect(page).to have_content 'サービス'
       end
@@ -73,6 +82,18 @@ describe 'ヘッダーのテスト' do
     end
 
     context 'ヘッダーのリンクを確認' do
+      it '会員情報編集ページに遷移する' do
+        click_link @user.name
+        expect(current_path).to eq(edit_user_path(@user))
+      end
+      it '新規投稿ページに遷移する' do
+        click_link '投稿する'
+        expect(current_path).to eq(new_game_path)
+      end
+      it '通知一覧ページに遷移する' do
+        click_link '通知'
+        expect(current_path).to eq(notifications_path)
+      end
       it 'アバウトページに遷移する' do
         click_link 'サービス'
         expect(current_path).to eq(about_path)
