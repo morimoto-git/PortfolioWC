@@ -41,6 +41,16 @@ describe 'user', type: :system do
       it 'マイページが正しく表示される' do
         expect(page).to have_content @user.name
       end
+      it 'プロフィール編集ボタンが正しく表示される' do
+        expect(page).to have_content 'プロフィール編集'
+      end
+      it '退会ボタンが正しく表示される' do
+        expect(page).to have_content '退会する'
+      end
+      it '一般ユーザーのマイページが正しく表示される' do
+        visit user_path(@user2)
+        expect(page).to have_content @user2.name
+      end
       it 'カテゴリーリンクが表示される' do
         expect(page).to have_content 'カテゴリー一覧'
       end
@@ -49,9 +59,25 @@ describe 'user', type: :system do
       end
     end
 
+    context '一般ユーザーのマイページ' do
+      before do
+        visit user_path(@user2)
+      end
+      it 'プロフィール編集ボタンが正しく表示される' do
+        expect(page).to have_content 'プロフィール編集'
+      end
+      it '退会ボタンが正しく表示される' do
+        expect(page).to have_content '退会する'
+      end
+    end
+
     it '会員情報編集ページが正しく表示される' do
       visit edit_user_path(@user)
       expect(page).to have_content @user.name
+    end
+    it '一般ユーザーの会員情報編集ページが正しく表示される' do
+      visit edit_user_path(@user2)
+      expect(page).to have_content @user2.name
     end
   end
 
@@ -80,6 +106,21 @@ describe 'user', type: :system do
       end
       it 'ユーザー一覧リンクが表示されない' do
         expect(page).to have_no_content 'ユーザー一覧'
+      end
+    end
+
+    context '他ユーザーのマイページ' do
+      before do
+        visit user_path(@user)
+      end
+      it 'マイページが正しく表示される' do
+        expect(page).to have_content @user.name
+      end
+      it 'プロフィール編集ボタン表示されない' do
+        expect(page).to have_no_content 'プロフィール編集'
+      end
+      it '退会ボタンが表示' do
+        expect(page).to have_no_content '退会する'
       end
     end
   end
