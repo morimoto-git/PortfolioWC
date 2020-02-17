@@ -5,9 +5,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update, :destroy] do
-    member do
-      get :following, :follower
-    end
+    get 'following' => 'relationships#following', as: 'following'
+    get 'follower' => 'relationships#follower', as: 'follower'
   end
 
   post 'follow/:id', to: 'relationships#follow', as: 'follow'
