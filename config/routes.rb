@@ -4,7 +4,14 @@ Rails.application.routes.draw do
   get 'ranking', to: 'games#ranking'
 
   devise_for :users
-  resources :users, only: [:index, :show, :edit, :update, :destroy]
+  resources :users, only: [:index, :show, :edit, :update, :destroy] do
+    member do
+      get :following, :follower
+    end
+  end
+
+  post 'follow/:id', to: 'relationships#follow', as: 'follow'
+  post 'unfollow/:id', to: 'relationships#unfollow', as: 'unfollow'
 
   resources :categories, only: [:index, :new, :edit, :create, :update]
 
