@@ -2,31 +2,7 @@
   <div class="container mt-3">
 	<div class="row">
 	  <div class="col-8 mx-auto">
-		<table class="table table-hover table-inverse">
-		  <thead>
-		    <tr>
-		      <th>ID</th>
-		      <th>名前</th>
-		      <th>投稿数</th>
-		      <th></th>
-		    </tr>
-		  </thead>
-		  <tbody>
-	      <% @users.each do |users| %>
-	        <tr>
-	          <td><%= users.id %></td>
-	          <td class="py-2">
-	          	<%= attachment_image_tag users, :profile_image, :fill, 40, 40, class: "rounded-circle", fallback: "no_icon.png", size: "40x40" %>
-	          	<%= users.name %>
-	          </td>
-	          <td><%= users.games.count %></td>
-	          <td>
-	          	<%= link_to "ユーザーページ", user_path(users), class: "text-info" %>
-	          </td>
-	        </tr>
-	      <% end %>
-	      </tbody>
-	    </table>
+	  	<%= render "index", users: @users %>
 	  </div>
 	</div>
   </div>
