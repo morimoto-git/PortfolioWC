@@ -1,12 +1,13 @@
 class CategoriesController < ApplicationController
   before_action :user_admin
+
   def index
-	@categories = Category.all.order(id: "DESC")
-	@category = Category.new
+	  @categories = Category.all.order(id: "DESC")
+	  @category = Category.new
   end
 
   def edit
-	@category = Category.find(params[:id])
+	  @category = Category.find(params[:id])
   end
 
   def create
