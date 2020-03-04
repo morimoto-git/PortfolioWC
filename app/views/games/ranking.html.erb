@@ -48,12 +48,12 @@
 	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
+		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 140, 105, fallback: "no_image.png", size: "140x105" %>
 		  	  	</td>
 			    <td>
 			  	  <%= link_to user_path(fav.user), class: "text-info" do %>
-			        <%= attachment_image_tag fav.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
-			        <%= fav.user.name %>
+			        <%= attachment_image_tag fav.user, :profile_image, :fill, 40, 40, class: "rounded-circle", fallback: "no_icon.png", size: "40x40" %><br>
+			        <span class="user_name"><%= fav.user.name %></span>
 			      <% end %>
 			    </td>
 		  	  	<td>
@@ -62,10 +62,10 @@
 		  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-				  <h5><%= fav.favorites.count %></h5>
+				  <%= fav.favorites.count %>
 				</td>
 				<td>
-				  <h5><%= fav.comments.count %></h5>
+				  <%= fav.comments.count %>
 		  	  	</td>
 		  	  </tr>
 		  	<% end %>
@@ -119,12 +119,12 @@
 	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
+		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 140, 105, fallback: "no_image.png", size: "140x105" %>
 		  	  	</td>
 			    <td>
 			  	  <%= link_to user_path(cmt.user), class: "text-info" do %>
-			        <%= attachment_image_tag cmt.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
-			        <%= cmt.user.name %>
+			        <%= attachment_image_tag cmt.user, :profile_image, :fill, 40, 40, class: "rounded-circle", fallback: "no_icon.png", size: "40x40" %><br>
+			        <span class="user_name"><%= cmt.user.name %></span>
 			      <% end %>
 			    </td>
 		  	  	<td>
@@ -133,10 +133,10 @@
 		  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-				  <h5><%= cmt.comments.count %></h5>
+				  <%= cmt.comments.count %>
 				</td>
 				<td>
-				  <h5><%= cmt.favorites.count %></h5>
+				  <%= cmt.favorites.count %>
 		  	  	</td>
 		  	  </tr>
 		  	<% end %>
