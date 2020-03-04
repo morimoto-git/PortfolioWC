@@ -105,3 +105,19 @@
 #wrapper, #nav {
   transition: transform 0.3s;
 }
+
+/*ranking*/
+.first_place {
+  color: #EBC128;
+  font-size: 25px;
+}
+
+.second_place {
+  color: #AFB8C1;
+  font-size: 21px;
+}
+
+.third_place {
+  color: #C2A274;
+  font-size: 17px;
+}

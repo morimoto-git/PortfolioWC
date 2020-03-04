@@ -8,7 +8,7 @@
 		  <thead>
 		    <tr>
 		      <th>
-		      	<i class="fas fa-crown" style="color: #FFB405;"></i>
+		      	<i class="fas fa-crown"></i>
 		      </th>
 		      <th></th>
 		      <th>投稿者</th>
@@ -25,7 +25,27 @@
 		  	<% @fav_rank.each.with_index(1) do |fav, i| %>
 		  	  <tr>
 		  	  	<td>
-		  	  	  <h4><%= i %></h4>
+	  	  	  	  <% case i %>
+	  	  	  	  <% when 1 %>
+	  	  	  	    <div class="first_place">
+	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% when 2 %>
+	  	  	  	    <div class="second_place">
+	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% when 3 %>
+	  	  	  	    <div class="third_place">
+	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% else %>
+	  	  	  	    <div class="text-muted">
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
 		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
@@ -59,7 +79,7 @@
 		  <thead>
 		    <tr>
 		      <th>
-		      	<i class="fas fa-crown" style="color: #FFB405;"></i>
+		      	<i class="fas fa-crown"></i>
 		      </th>
 		      <th></th>
 		      <th>投稿者</th>
@@ -76,7 +96,27 @@
 		  	<% @cmt_rank.each.with_index(1) do |cmt, i| %>
 		  	  <tr>
 		  	  	<td>
-		  	  	  <h4><%= i %></h4>
+	  	  	  	  <% case i %>
+	  	  	  	  <% when 1 %>
+	  	  	  	    <div class="first_place">
+	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% when 2 %>
+	  	  	  	    <div class="second_place">
+	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% when 3 %>
+	  	  	  	    <div class="third_place">
+	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% else %>
+	  	  	  	    <div class="text-muted">
+	  	  	  	      <%= i %>
+	  	  	  	    </div>
+	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
 		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 120, 90, fallback: "no_image.png", size: "120x90" %>
