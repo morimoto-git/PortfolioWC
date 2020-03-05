@@ -107,6 +107,26 @@
 }
 
 /*ranking*/
+#clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.main_contents {
+  width: 1250px;
+  margin: 10px auto;
+}
+
+.good, .comment {
+  width: 620px;
+  float: left;
+}
+
+.good {
+  margin-right: 10px;
+}
+
 .first_place {
   color: #EBC128;
   font-size: 25px;
