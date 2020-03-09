@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     if current_user.admin?
-      @users = User.all
+      @users = User.all.page(params[:page]).per(10)
     else
       redirect_to root_path
     end
