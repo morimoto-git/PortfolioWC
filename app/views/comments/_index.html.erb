@@ -17,7 +17,9 @@
 
   <% if comment.user == current_user %>
     <div class="text-right">
-      <%= link_to "削除", game_comments_path(comment), class: "btn-sm btn-danger", method: :delete %>
+      <%= link_to game_comments_path(comment), method: :delete do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
     </div>
   <% end %>
 
