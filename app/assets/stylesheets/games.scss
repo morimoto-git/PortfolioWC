@@ -118,14 +118,16 @@
   margin: 10px auto;
 }
 
-#switch_good {
+#switch_good, #switch_comment {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .show_color {
   color: #FFFFFF;
   background-color: #E8653F;
   font-size: 25px;
+  padding: 4px 12px;
 }
 
 .hidden {
@@ -145,8 +147,4 @@
 .third_place {
   color: #C2A274;
   font-size: 20px;
-}
-
-.user_name {
-  font-size: 13px;
 }
