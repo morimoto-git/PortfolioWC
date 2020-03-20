@@ -118,13 +118,12 @@
   margin: 10px auto;
 }
 
-.good, .comment {
-  width: 620px;
-  float: left;
+.show_color {
+  background-color: #EBC128;
 }
 
-.good {
-  margin-right: 10px;
+.hidden {
+  display: none;
 }
 
 .first_place {

@@ -92,3 +92,18 @@ $(function(){
     $('#wrapper, #nav').removeClass('show');
   });
 });
+
+$(function(){
+  $('#switch_good').on('click', function(){
+    $('#good').removeClass('hidden');
+    $('#comment').addClass('hidden');
+    $('#switch_comment').removeClass('show_color');
+    $('#switch_good').addClass('show_color');
+  });
+  $('#switch_comment').on('click', function(){
+    $('#comment').removeClass('hidden');
+    $('#good').addClass('hidden');
+    $('#switch_good').removeClass('show_color');
+    $('#switch_comment').addClass('show_color');
+  });
+});
