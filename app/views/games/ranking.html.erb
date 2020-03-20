@@ -5,7 +5,6 @@
 	  <span id="switch_comment">コメント数</span>
 
 	  <div id="good">
-	  	
 		<table class="table table-hover table-inverse">
 		  <thead>
 		    <tr>
@@ -30,17 +29,17 @@
 	  	  	  	  <% case i %>
 	  	  	  	  <% when 1 %>
 	  	  	  	    <div class="first_place">
-	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <i class="fas fa-crown"></i>
 	  	  	  	      <%= i %>
 	  	  	  	    </div>
 	  	  	  	  <% when 2 %>
 	  	  	  	    <div class="second_place">
-	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <i class="fas fa-crown"></i>
 	  	  	  	      <%= i %>
 	  	  	  	    </div>
 	  	  	  	  <% when 3 %>
 	  	  	  	    <div class="third_place">
-	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <i class="fas fa-crown"></i>
 	  	  	  	      <%= i %>
 	  	  	  	    </div>
 	  	  	  	  <% else %>
@@ -50,7 +49,7 @@
 	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 180, 135, fallback: "no_image.png", size: "180x135" %>
+		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 200, 150, fallback: "no_image.png", size: "200x150" %>
 		  	  	</td>
 			    <td>
 			  	  <%= link_to user_path(fav.user), class: "text-info" do %>
@@ -76,7 +75,6 @@
 	  </div>
 
 	  <div id="comment" class="hidden">
-	  	
 		<table class="table table-hover table-inverse">
 		  <thead>
 		    <tr>
@@ -101,17 +99,17 @@
 	  	  	  	  <% case i %>
 	  	  	  	  <% when 1 %>
 	  	  	  	    <div class="first_place">
-	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <i class="fas fa-crown"></i>
 	  	  	  	      <%= i %>
 	  	  	  	    </div>
 	  	  	  	  <% when 2 %>
 	  	  	  	    <div class="second_place">
-	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <i class="fas fa-crown"></i>
 	  	  	  	      <%= i %>
 	  	  	  	    </div>
 	  	  	  	  <% when 3 %>
 	  	  	  	    <div class="third_place">
-	  	  	  	      <i class="fas fa-crown"></i><br>
+	  	  	  	      <i class="fas fa-crown"></i>
 	  	  	  	      <%= i %>
 	  	  	  	    </div>
 	  	  	  	  <% else %>
@@ -121,7 +119,7 @@
 	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 180, 135, fallback: "no_image.png", size: "180x135" %>
+		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 200, 150, fallback: "no_image.png", size: "200x150" %>
 		  	  	</td>
 			    <td>
 			  	  <%= link_to user_path(cmt.user), class: "text-info" do %>

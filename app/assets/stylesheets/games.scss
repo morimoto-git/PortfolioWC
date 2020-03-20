@@ -114,12 +114,18 @@
 }
 
 .main_contents {
-  width: 1250px;
+  width: 1050px;
   margin: 10px auto;
 }
 
+#switch_good {
+  margin-right: 10px;
+}
+
 .show_color {
-  background-color: #EBC128;
+  color: #FFFFFF;
+  background-color: #E8653F;
+  font-size: 25px;
 }
 
 .hidden {
@@ -128,17 +134,17 @@
 
 .first_place {
   color: #EBC128;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .second_place {
   color: #AFB8C1;
-  font-size: 21px;
+  font-size: 25px;
 }
 
 .third_place {
   color: #C2A274;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .user_name {
