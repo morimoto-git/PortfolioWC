@@ -19,6 +19,7 @@
 //= require cocoon
 //= require Chart.min
 
+// image prev
 $(function() {
   function readURL(input) {
    if (input.files && input.files[0]) {
@@ -34,6 +35,7 @@ $(function() {
  });
 });
 
+// game show graph
 (function() {
   window.draw_graph = function() {
     var ctx, myChart;
@@ -84,6 +86,7 @@ $(function() {
 
 }).call(this);
 
+// game show comment
 $(function(){
   $('#open_nav').on('click', function(){
     $('#wrapper, #nav').toggleClass('show');
@@ -93,6 +96,7 @@ $(function(){
   });
 });
 
+// game ranking good or comment
 $(function(){
   $('#switch_good').on('click', function(){
     $('#good').removeClass('hidden').hide().fadeIn(1000);

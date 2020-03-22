@@ -37,6 +37,10 @@
   text-align: center;
 }
 
+.top_games:hover, .top_new_game:hover, .top_login:hover, .top_account:hover {
+  opacity: 0.6;
+}
+
 /*about*/
 
 .about-img {
