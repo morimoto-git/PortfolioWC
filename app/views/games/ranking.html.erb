@@ -49,7 +49,9 @@
 	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-		  	  	  <%= attachment_image_tag fav, :main_image, :fit, 220, 165, fallback: "no_image.png", size: "220x165" %>
+		  	  	  <%= link_to game_path(fav) do %>
+		  	  	    <%= attachment_image_tag fav, :main_image, :fit, 220, 165, fallback: "no_image.png", size: "220x165" %>
+		  	  	  <% end %>
 		  	  	</td>
 			    <td>
 		  	  	  <%= link_to game_path(fav), class: "text-info" do %>
@@ -125,7 +127,9 @@
 	  	  	  	  <% end %>
 		  	  	</td>
 		  	  	<td>
-		  	  	  <%= attachment_image_tag cmt, :main_image, :fit, 220, 165, fallback: "no_image.png", size: "220x165" %>
+		  	  	  <%= link_to game_path(cmt) do %>
+		  	  	    <%= attachment_image_tag cmt, :main_image, :fit, 220, 165, fallback: "no_image.png", size: "220x165" %>
+		  	  	  <% end %>
 		  	  	</td>
 			    <td>
 		  	  	  <%= link_to game_path(cmt), class: "text-info" do %>
