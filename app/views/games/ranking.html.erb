@@ -12,7 +12,7 @@
 		      	<h5 class="fas fa-crown"></h5>
 		      </th>
 		      <th></th>
-		      <th><h5>ゲーム名</h5></th>
+		      <th><h5>ゲーム</h5></th>
 		      <th><h5>投稿者</h5></th>
 		      <th>
 		      	<h5 class="fas fa-heart" style="color: red;"></h5>
@@ -55,10 +55,16 @@
 		  	  	  <%= link_to game_path(fav), class: "text-info" do %>
 		  	  	    <h4><%= fav.title %></h4>
 		  	  	  <% end %>
+		  	  	  <span class="text-muted">
+		  	  	  	カテゴリー：<%= fav.category.name %><br>
+		            プレイ人数：<%= fav.player %><br>
+		            プレイ時間：<%= fav.playing_time %><br>
+		            推奨年齢：<%= fav.level %>
+		          </span>
 			    </td>
 		  	  	<td>
 			  	  <%= link_to user_path(fav.user), class: "text-info" do %>
-			        <%= attachment_image_tag fav.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
+			        <%= attachment_image_tag fav.user, :profile_image, :fill, 80, 80, class: "rounded-circle", fallback: "no_icon.png", size: "80x80" %><br>
 			        <%= fav.user.name %>
 			      <% end %>
 		  	  	</td>
@@ -82,7 +88,7 @@
 		      	<h5 class="fas fa-crown"></h5>
 		      </th>
 		      <th></th>
-		      <th><h5>ゲーム名</h5></th>
+		      <th><h5>ゲーム</h5></th>
 		      <th><h5>投稿者</h5></th>
 		      <th>
 		      	<h5 class="far fa-comment-dots"></h5>
@@ -125,10 +131,16 @@
 		  	  	  <%= link_to game_path(cmt), class: "text-info" do %>
 		  	  	    <h4><%= cmt.title %></h4>
 		  	  	  <% end %>
+		  	  	  <span class="text-muted">
+		  	  	  	カテゴリー：<%= cmt.category.name %><br>
+		            プレイ人数：<%= cmt.player %><br>
+		            プレイ時間：<%= cmt.playing_time %><br>
+		            推奨年齢：<%= cmt.level %>
+		          </span>
 			    </td>
 		  	  	<td>
 			  	  <%= link_to user_path(cmt.user), class: "text-info" do %>
-			        <%= attachment_image_tag cmt.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %><br>
+			        <%= attachment_image_tag cmt.user, :profile_image, :fill, 80, 80, class: "rounded-circle", fallback: "no_icon.png", size: "80x80" %><br>
 			        <%= cmt.user.name %>
 			      <% end %>
 		  	  	</td>
