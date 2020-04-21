@@ -27,9 +27,13 @@
   border-bottom: solid #FFB405;
 }
 
-.show-game_title {
+.show-game_title, .show-game_fav {
   font-size: 40px;
-  margin-right: 60px;
+}
+
+.show-game_fav {
+  font-size: 30px;
+  margin: 0 30px;
 }
 
 .show-game_cate {

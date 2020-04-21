@@ -1,7 +1,7 @@
 <div id="wrapper">
 
-  <div id="open_nav">
-    <h2 class="text-muted">
+  <div id="open_nav" class="text-muted">
+    <h2>
       <i class="far fa-comment-dots"></i>
       <%= @game.comments.count %>
     </h2>
@@ -17,9 +17,6 @@
           <%= attachment_image_tag @game.user, :profile_image, :fill, 50, 50, class: "rounded-circle", fallback: "no_icon.png", size: "50x50" %>
           <%= @game.user.name %>
         <% end %>
-        <span id="favorite_<%= @game.id %>">
-          <%= render "favorites/favorite", game: @game %>
-        </span>
         <% if @game.user == current_user %>
           <%= link_to "編集する", edit_game_path(@game), class: "fas fa-angle-double-right text-info ml-5" %>
         <% end %>
@@ -39,10 +36,12 @@
           <%= @game.level %>
         </h5>
       </div>
-
+      <span class="show-game_cate">カテゴリー：<%= @game.category.name %></span>
       <nav class="show-game mb-2 text-muted">
         <span class="show-game_title"><%= @game.title %></span>
-        <span class="show-game_cate">カテゴリー：<%= @game.category.name %></span>
+        <span id="favorite_<%= @game.id %>" class="show-game_fav">
+          <%= render "favorites/favorite", game: @game %>
+        </span>
       </nav>
 
       <%= attachment_image_tag @game, :main_image, :fit, 440, 330, fallback: "no_image.png", size: "440x330" %>
