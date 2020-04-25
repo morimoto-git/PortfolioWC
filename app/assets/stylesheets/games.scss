@@ -127,6 +127,10 @@
   cursor: pointer;
 }
 
+#switch_good:hover, #switch_comment:hover {
+  opacity: 0.6;
+}
+
 .show_color {
   color: #FFFFFF;
   background-color: #E8653F;
