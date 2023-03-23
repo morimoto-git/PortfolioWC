@@ -2,9 +2,7 @@
 
 ## Name
 **ur game**  
-オリジナルのアナログゲームを閲覧・投稿できるアプリケーション  
-※urはyourの略語  
-URL:http://urgame.net/  
+URL:http://urgame.net/（閉鎖済み）  
 
 ## Features
 主な機能  
@@ -65,4 +63,4 @@ rails s
 puma/nginx
 
 ## Author
-Hirotomo Morimoto
+/
