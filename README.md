@@ -2,7 +2,7 @@
 
 ## Name
 **ur game**  
-URL:http://urgame.net/（閉鎖済み）  
+（閉鎖）URL:http://urgame.net/
 
 ## Features
 主な機能  
